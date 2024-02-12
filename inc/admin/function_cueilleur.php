@@ -9,4 +9,11 @@
         mysqli_free_result($temp);
         return $result;
     }
+
+    function insert_cueilleur($nom,$id_genre,$date_naissance){
+        $request = "INSERT INTO culthe_cueilleur VALUES(NULL,%d,%d,%d)";
+        $request = sprintf($request,$nom,$id_genre,$date_naissance);
+        echo $request;
+        mysqli_query(dbconnect(),$request);
+    }
 ?>
