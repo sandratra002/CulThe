@@ -14,7 +14,7 @@ if($username != null && $password != null){
             unset($_SESSION['error']);
         }
         $_SESSION['user'] = get_user_by_id($login['id']);
-        $header .= "";
+        $header .= "../../pages/admin/main.php";
     }
 }else{
     $_SESSION['error'] = "Please fill up all fields"; 

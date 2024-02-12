@@ -1,0 +1,32 @@
+.side-bar {
+    width: 250px; 
+}
+  
+.side-bar .side_bar__title {
+    text-align: center; 
+    padding: 10px;
+}
+
+.side-bar .side_bar__main {
+    list-style: none; 
+    padding: 0; 
+}
+
+.side-bar .side_bar__item {
+    margin-bottom: 1rem; 
+}
+
+.side-bar .side_bar__link {
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    gap: .5rem;
+    text-decoration: none;
+    color: inherit; 
+    border-radius: 10px;
+}
+
+.side-bar .side_bar__link:hover {
+    background-color: #eee; /* Hover effect background color */
+}
+  

@@ -1,10 +1,20 @@
-div {
+html {
 }
 
-div {
+
+:root {
+  --bs-breakpoint-xs: 0;
+  --bs-breakpoint-sm: 576px;
+  --bs-breakpoint-md: 768px;
+  --bs-breakpoint-lg: 992px;
+  --bs-breakpoint-xl: 1200px;
+  --bs-breakpoint-xxl: 1400px;
 }
 
-div {
+@media (prefers-reduced-motion:no-preference) {
+  :root {
+    scroll-behavior: smooth;
+  }
 }
 
 .user_icon{
@@ -17,6 +27,10 @@ div {
   justify-content: center;
   font-size: 40px;
   border-radius: 50%;
+}
+
+ul li{
+  list-style: none;
 }
 
 .align-items-center {
