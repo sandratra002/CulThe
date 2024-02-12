@@ -22,3 +22,12 @@ CREATE TABLE culthe_user(
 
 INSERT INTO culthe_user VALUE 
     (NULL,'admin',sha1('admin'),1);
+
+--views--
+CREATE OR REPLACE VIEW v_culthe_info_user AS
+    SELECT c_u.id AS id, c_u.username AS username, c_t.id AS id_type, c_t.libelle AS libelle
+    FROM culthe_user 
+    AS c_u
+    JOIN culthe_type_user
+    AS c_t
+    ON c_u.id = c_t.id;
