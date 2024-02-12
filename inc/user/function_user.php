@@ -12,4 +12,10 @@
         mysqli_free_result($temp);
         return $result;
     }   
+
+    function insert_cueillette($id_cueilleur,$id_parcelle,$date_cueillette,$poids_cueilli){
+        $request = "INSERT INTO culthe_cueillette VALUES(NULL,%s,%s,'%s',%s)";
+        $request = sprintf($request,$id_cueilleur,$id_parcelle,$date_cueillette,$poids_cueilli);
+        mysqli_query(dbconnect(),$request);
+    }
 ?>

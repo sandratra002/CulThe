@@ -119,7 +119,7 @@ CREATE TABLE culthe_depense(
     FOREIGN KEY(id_categorie_depense) REFERENCES culthe_categorie_depense(id)
 )Engine=InnoDb;
 
-CREATE TABLE culthe_cueuillette(
+CREATE TABLE culthe_cueillette(
     id INT PRIMARY KEY AUTO_INCREMENT,
     id_cueilleur INT NOT NULL, 
     id_parcelle INT NOT NULL, 
