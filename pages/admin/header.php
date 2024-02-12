@@ -9,8 +9,8 @@
                 <li class="nav-item"><a class="nav-link" href="main.php?page=tea">Tea</a></li>
                 <li class="nav-item"><a class="nav-link" href="main.php?page=parecelle">Parecelle</a></li>
                 <li class="nav-item"><a class="nav-link" href="main.php?page=picker">Picker</a></li>
-                <li class="nav-item"><a class="nav-link" href="main.php?page=tea">Charge</a></li>
-                <li class="nav-item"><a class="nav-link" href="main.php?page=tea">Salary</a></li>
+                <li class="nav-item"><a class="nav-link" href="main.php?page=charge">Charge</a></li>
+                <li class="nav-item"><a class="nav-link" href="main.php?page=salary">Salary</a></li>
             </ul><a class="btn btn-primary ms-md-2" role="button" href="#">Logout <i class="fa fa-sign-out"></i></a>
         </div>
     </div>
