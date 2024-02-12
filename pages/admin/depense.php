@@ -9,31 +9,52 @@
                     <tr>
                         <th class="id number">ID Depense</th>
                         <th class="name">Libelle de categorie</th>
+                        <th class="name">Action</th>
                     </tr>
 
                     <tr>
                         <td class="id number">1</td>
                         <td class="name">Transportations</td>
+                        <td>
+                            <a href="#" class="edit-btn"><i class="fa fa-edit"></i></a>
+                            <a href="#" class="delete-btn"><i class="fa fa-trash"></i></a>
+                        </td>
                     </tr>
 
                     <tr>
-                        <td class="id number">1</td>
-                        <td class="name">Transportations</td>
+                        <td class="id number">2</td>
+                        <td class="name">Tips</td>
+                        <td>
+                            <a href="#" class="edit-btn"><i class="fa fa-edit"></i></a>
+                            <a href="#" class="delete-btn"><i class="fa fa-trash"></i></a>
+                        </td>
                     </tr>
 
                     <tr>
-                        <td class="id number">1</td>
-                        <td class="name">Transportations</td>
+                        <td class="id number">3</td>
+                        <td class="name">Comission</td>
+                        <td>
+                            <a href="#" class="edit-btn"><i class="fa fa-edit"></i></a>
+                            <a href="#" class="delete-btn"><i class="fa fa-trash"></i></a>
+                        </td>
                     </tr>
 
                     <tr>
-                        <td class="id number">1</td>
+                        <td class="id number">4</td>
                         <td class="name">Transportations</td>
+                        <td>
+                            <a href="#" class="edit-btn"><i class="fa fa-edit"></i></a>
+                            <a href="#" class="delete-btn"><i class="fa fa-trash"></i></a>
+                        </td>
                     </tr>
 
                     <tr>
-                        <td class="id number">1</td>
+                        <td class="id number">5</td>
                         <td class="name">Transportations</td>
+                        <td>
+                            <a href="#" class="edit-btn"><i class="fa fa-edit"></i></a>
+                            <a href="#" class="delete-btn"><i class="fa fa-trash"></i></a>
+                        </td>
                     </tr>
                 </table>
             </div>
@@ -46,16 +67,6 @@
                 <hr class="form__sep">
 
                 <div class="form__content">
-                    <div class="form__input vertical">
-                        <label for="field" class="form__label">Identification categorie:</label>
-
-                        <select name="field_id" id="field" class="form__input-field">
-                            <option value="">-</option>
-                            <option value="0">Categorie 1</option>
-                            <option value="1">Categorie 2</option>
-                            <option value="2">Categorie 3</option>
-                        </select>
-                    </div>
 
                     <div class="form__input vertical">
                         <label for="expense" class="form__label">Libelle de categorie:</label>

@@ -19,14 +19,18 @@
     <link rel="stylesheet" href="../../assets/lib/fontawesome-free-6.4.2-web/css/all.css">
     
     <!-- Css stylesheet -->
+    <!-- <link rel="stylesheet" href="../../assets/css/sidebar.css"> -->
     <link rel="stylesheet" href="../../assets/css/style.css">
-    <link rel="stylesheet" href="../../assets/css/sidebar.css">
     <link rel="stylesheet" href="../../assets/css/index.css">
     <link rel="stylesheet" href="../../assets/css/form.css">
     <link rel="stylesheet" href="../../assets/css/home.css">
     <link rel="stylesheet" href="../../assets/css/layout.css">
-    <link rel="stylesheet" href="../../assets/css/login.css">
+    <!-- <link rel="stylesheet" href="../../assets/css/login.css"> -->
+    
 </head>
+<style>
+
+</style>
 <body>
     <?php include("../admin/header.php"); ?>
     <?php if(isset($include)) {?>
