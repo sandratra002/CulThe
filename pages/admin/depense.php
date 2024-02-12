@@ -1,3 +1,9 @@
+<?php
+
+    require("../../inc/functions.php");
+    $depenses = get_all_categorie_depense();
+?>
+
 <div class="body double-col">
         <section class="left">
             <h1 class="section__title">Tableau des depenses</h1>
@@ -11,51 +17,16 @@
                         <th class="name">Libelle de categorie</th>
                         <th class="name">Action</th>
                     </tr>
-
+                    <?php foreach($depenses as &$value){ ?>
                     <tr>
-                        <td class="id number">1</td>
-                        <td class="name">Transportations</td>
+                        <td class="id number"><?php echo $value['id']; ?></td>
+                        <td class="name"><?php echo $value['libelle']; ?></td>
                         <td>
                             <a href="#" class="edit-btn"><i class="fa fa-edit"></i></a>
                             <a href="#" class="delete-btn"><i class="fa fa-trash"></i></a>
                         </td>
                     </tr>
-
-                    <tr>
-                        <td class="id number">2</td>
-                        <td class="name">Tips</td>
-                        <td>
-                            <a href="#" class="edit-btn"><i class="fa fa-edit"></i></a>
-                            <a href="#" class="delete-btn"><i class="fa fa-trash"></i></a>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td class="id number">3</td>
-                        <td class="name">Comission</td>
-                        <td>
-                            <a href="#" class="edit-btn"><i class="fa fa-edit"></i></a>
-                            <a href="#" class="delete-btn"><i class="fa fa-trash"></i></a>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td class="id number">4</td>
-                        <td class="name">Transportations</td>
-                        <td>
-                            <a href="#" class="edit-btn"><i class="fa fa-edit"></i></a>
-                            <a href="#" class="delete-btn"><i class="fa fa-trash"></i></a>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td class="id number">5</td>
-                        <td class="name">Transportations</td>
-                        <td>
-                            <a href="#" class="edit-btn"><i class="fa fa-edit"></i></a>
-                            <a href="#" class="delete-btn"><i class="fa fa-trash"></i></a>
-                        </td>
-                    </tr>
+                    <?php } ?>
                 </table>
             </div>
         </section>
@@ -78,4 +49,5 @@
                 <input type="submit" value="Inserer" class="form__submit btn" />
             </form>
         </section>
-    </div>
+</div>
+<script src="../../assets/js/depense.js"></script>

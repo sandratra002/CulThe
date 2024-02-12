@@ -2,7 +2,7 @@
     function get_all_categorie_depense(){
         $request = "SELECT * FROM culthe_categorie_depense";
         $temp = mysqli_query(dbconnect(),$request);
-        $result = [];
+        $result = array();
         while($donne = mysqli_fetch_array($temp)){
             $result[] = $donne;
         }
