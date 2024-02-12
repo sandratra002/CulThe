@@ -33,6 +33,7 @@
                                 <p class="text-muted">Forgot your password?</p>
                             </form>
                         </div>
+                        <p style="padding: 1px;padding-left: 130px;color:red;">This is an error</p>
                     </div>
                 </div>
             </div>
