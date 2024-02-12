@@ -13,7 +13,6 @@
     function insert_categorie_depense($libelle){
         $request = "INSERT INTO culthe_categorie_depense VALUES(NULL,%d)";
         $request = sprintf($request,$libelle);
-        echo $request;
         mysqli_query(dbconnect(),$request);
     }
 
@@ -26,7 +25,6 @@
     function update_categorie_depense($id,$libelle){
         $request = "UPDATE culthe_categorie_depense SET libelle='%s' WHERE id=%s";
         $request = sprintf($request,$libelle);
-        echo($request);
         mysqli_query(dbconnect(),$request);
     }
 ?>
