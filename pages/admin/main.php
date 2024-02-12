@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="../../assets/css/home.css">
     <link rel="stylesheet" href="../../assets/css/layout.css">
 
+    <script src="../../assets/js/index.js"></script>
 </head>
 <style>
 

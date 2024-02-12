@@ -11,10 +11,10 @@
             <hr class="section__sep">
 
             <div class="section__content">
-                <table>
+                <table id="table">
                     <tr>
-                        <th class="id number">ID Depense</th>
-                        <th class="name">Libelle de categorie</th>
+                        <th class="id number">Id</th>
+                        <th class="name">Libelle</th>
                         <th class="name">Action</th>
                     </tr>
                     <?php foreach($depenses as &$value){ ?>
