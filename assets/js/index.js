@@ -26,22 +26,7 @@ const deleteRow = (tableId, rowIndex) => {
       console.error(`Invalid row index: ${rowIndex}`);
     }
   }
-  
-// const updateValue = (tableId, rowIndex, headerLabel, newValue) => {
-//     const table = document.getElementById(tableId);
-//     if (table && rowIndex >= 0 && rowIndex < table.rows.length) {
-//         const row = table.rows[rowIndex];
-//         const cells = Array.from(row.querySelectorAll('td, th')); 
-//         const index = cells.findIndex(cell => cell.textContent === headerLabel); 
-//         if (index !== -1) {
-//             cells[index].textContent = newValue; // Update cell content
-//         } else {
-//             console.error(`Header label "${headerLabel}" not found in row ${rowIndex}`);
-//         }
-//     } else {
-//         console.error(`Invalid row index: ${rowIndex}`);
-//     }
-// }
+
 
 function updateValue(tableId, rowIndex, headerLabel, newValue) {
     const table = document.getElementById(tableId);
@@ -59,7 +44,7 @@ function updateValue(tableId, rowIndex, headerLabel, newValue) {
     } else {
       console.error(`Invalid row index: ${rowIndex}`);
     }
-  }
+}
   
   
   
