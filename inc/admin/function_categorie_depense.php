@@ -4,7 +4,7 @@
         $temp = mysqli_query(dbconnect(),$request);
         $result = [];
         while($donne = mysqli_fetch_array($temp)){
-            $result = $donne;
+            $result[] = $donne;
         }
         mysqli_free_result($temp);
         return $result;

@@ -8,5 +8,5 @@
     require("admin/function_categorie_depense.php");
     require("admin/function_salaire.php");
 
-    insert_cueillette(1,2,'2024-2-2',10);
+    insert_depense(1,'2024-1-1 00:00',188000);
 ?>

@@ -18,4 +18,11 @@
         $request = sprintf($request,$id_cueilleur,$id_parcelle,$date_cueillette,$poids_cueilli);
         mysqli_query(dbconnect(),$request);
     }
+
+    function insert_depense($id_categorie_depense,$date,$montant){
+        $request = "INSERT INTO culthe_depense VALUES(NULL,%s,%s,%d)";
+        $request = sprintf($request,$id_categorie_depense,$montant,$date);
+        echo($request);
+        mysqli_query(dbconnect(),$request);
+    }
 ?>
