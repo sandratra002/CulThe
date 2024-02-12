@@ -1,6 +1,4 @@
 <?php
-
-    require("../../inc/functions.php");
     $depenses = get_all_categorie_depense();
 ?>
 
@@ -11,10 +9,10 @@
             <hr class="section__sep">
 
             <div class="section__content">
-                <table>
+                <table id="table">
                     <tr>
-                        <th class="id number">ID Depense</th>
-                        <th class="name">Libelle de categorie</th>
+                        <th class="id number">Id</th>
+                        <th class="name">Libelle</th>
                         <th class="name">Action</th>
                     </tr>
                     <?php foreach($depenses as &$value){ ?>
@@ -41,7 +39,8 @@
                         <input type="text" name="expense_label" id="expense" class="form__input-field" />
                     </div>
                 </div>
-                <input type="submit" value="Inserer" class="form__submit btn" />
+
+                <input type="submit" value="Inserer" class="form__submit btn" id="form__submit-btn" />
             </form>
         </section>
 </div>

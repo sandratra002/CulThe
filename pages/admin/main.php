@@ -1,6 +1,7 @@
 <?php
     require("../../inc/functions.php");
     session_start();
+    require("../../inc/functions.php");
     $include = "default.php";
     if(isset($_GET["page"])){
         $include = "../admin/" . $_GET["page"] . ".php";
@@ -27,6 +28,7 @@
     <link rel="stylesheet" href="../../assets/css/home.css">
     <link rel="stylesheet" href="../../assets/css/layout.css">
 
+    <script src="../../assets/js/index.js"></script>
 </head>
 <style>
 
