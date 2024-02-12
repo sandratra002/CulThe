@@ -11,9 +11,11 @@
         return $result;
     }
 
-    function insert_variete_the(){
+    function insert_variete_the($nom,$occupation,$rendement){
         $request = "INSERT INTO culthe_variete_the VALUES(NULL,'%s',%s,%s)";
         $request = sprintf($nom,$occupation,$rendement);
         mysqli_query(dbconnect(),$request);
     }
+
+
 ?>
