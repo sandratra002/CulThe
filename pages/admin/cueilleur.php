@@ -19,8 +19,8 @@
                     </tr>
                 <?php for($i=0; $i<count($list_cueilleur); $i++){ ?>
                     <tr>
-                        <td class="id number"><?php echo($list_cueilleur[$i]['id']); ?></td>
-                        <td class="name"><?php echo($list_cueilleur[$i]['nom']); ?></td>
+                        <td class="id number"><?php echo($list_cueilleur[$i]['id_cueilleur']); ?></td>
+                        <td class="name"><?php echo($list_cueilleur[$i]['nom_cueilleur']); ?></td>
                         <td class="date"><?php echo($list_cueilleur[$i]['date_naissance']); ?></td>
                         <td class="gender"><?php echo($list_cueilleur[$i]['genre']); ?></td>
                     </tr>
