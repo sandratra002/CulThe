@@ -9,4 +9,11 @@
         mysqli_free_result($temp);
         return $result;
     }
+
+    function insert_categorie_depense($libelle){
+        $request = "INSERT INTO culthe_categorie_depense VALUES(NULL,%d)";
+        $request = sprintf($request,$libelle);
+        echo $request;
+        mysqli_query(dbconnect(),$request);
+    }
 ?>
