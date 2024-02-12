@@ -2,9 +2,9 @@
     function get_all_info_parcelle(){
         $request = "SELECT * FROM v_culthe_info_parcelle";
         $temp = mysqli_query(dbconnect(),$request);
-        $result = [];
+        $result = array();
         while($donne = mysqli_fetch_array($temp)){
-            $result = $donne;
+            $result[] = $donne;
         }
         mysqli_free_result($temp);
         return $result;

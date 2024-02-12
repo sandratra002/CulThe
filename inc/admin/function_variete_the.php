@@ -3,7 +3,7 @@
         $request = "SELECT * FROM culthe_variete_the";
         $temp = mysqli_query(dbconnect(),$request);
         $result = [];
-        while($donne = mysqli_fecth_array($temp)){
+        while($donne = mysqli_fetch_array($temp)){
             $result[] = $donne;
         }
         mysqli_free_result($temp);
