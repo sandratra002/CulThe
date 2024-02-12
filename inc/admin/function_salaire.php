@@ -9,4 +9,11 @@
         mysqli_free_result($temp);
         return $result;
     }
+
+    function insert_salaire($id_cueilleur,$montant){
+        $request = "INSERT INTO culthe_salaire VALUES(NULL,%s,%s)";
+        $request = sprintf($request,$id_cueilleur,$montant);
+        echo $request;
+        mysqli_query(dbconnect(),$request);
+    }
 ?>
