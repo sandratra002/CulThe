@@ -16,4 +16,10 @@
         echo $request;
         mysqli_query(dbconnect(),$request);
     }
+
+    function delete_cueilleur_by_id($id){
+        $request = "DELETE FROM culthe_cueilleur WHERE id=%s";
+        $request = sprintf($request,$id);
+        mysqli_query(dbconnect(),$request);
+    }
 ?>
