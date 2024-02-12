@@ -1,7 +1,8 @@
 <?php
+    session_start();
     $include = "default.php";
     if(isset($_GET["page"])){
-        $include = "../admin/" . $_GET["page"] . "/main.php";
+        $include = "../admin/" . $_GET["page"] . ".php";
     }
 ?>
 
@@ -12,11 +13,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CluThe</title>
 
+    <!-- Libraries -->
     <link rel="stylesheet" href="../../assets/lib/bootstrap-5.3.2-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="stylesheet" href="../../assets/lib/fontawesome-free-6.4.2-web/css/fontawesome.css">
     <link rel="stylesheet" href="../../assets/lib/fontawesome-free-6.4.2-web/css/all.css">
+    
+    <!-- Css stylesheet -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="stylesheet" href="../../assets/css/sidebar.css">
+    <link rel="stylesheet" href="../../assets/css/index.css">
+    <link rel="stylesheet" href="../../assets/css/form.css">
+    <link rel="stylesheet" href="../../assets/css/home.css">
+    <link rel="stylesheet" href="../../assets/css/layout.css">
+    <link rel="stylesheet" href="../../assets/css/login.css">
 </head>
 <body>
     <?php include("../admin/header.php"); ?>

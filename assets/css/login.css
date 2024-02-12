@@ -1,0 +1,103 @@
+.body {
+    display: flex;
+
+    background: url(../img/tea_breeze_solid.jpg);
+    background-size: cover;
+}
+
+.body>* {
+    flex-basis: 50%;
+
+    min-height: 100vh;
+}
+
+.body section {
+    background-color: rgba(33, 33, 33, .35);
+}
+
+#corp-logo-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    backdrop-filter: blur(10px) saturate(150%);
+    -webkit-backdrop-filter: blur(10px) saturate(180%);
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(209, 213, 219, 0.3);
+
+    font-size: 4rem;
+    text-align: left;
+}
+
+#login-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section__title {
+    color: var(--accent);
+}
+
+#login-form {
+    padding: 1.5rem;
+    border-radius: var(--border--soft);
+
+    backdrop-filter: blur(10px) saturate(180%);
+    -webkit-backdrop-filter: blur(10px) saturate(180%);
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 12px;
+    border: 1px solid rgba(209, 213, 219, 0.3);
+}
+
+.form>*+* {
+    margin-top: 1.5rem;
+}
+
+.form__title {
+    margin: 0;
+}
+
+.form__content>*+* {
+    margin-top: .875rem;
+}
+
+.form__input.vertical {
+    display: flex;
+    flex-direction: column;
+    gap: .2rem;
+
+    width: 100%;
+}
+
+.form__input.horizontal {
+    display: flex;
+    align-items: center;
+    gap: .2rem;
+
+    width: 100%;
+}
+
+.form__input-group.horizontal {
+    display: flex;
+    align-items: center;
+}
+
+.form__input-field {
+    padding: .4rem .8rem;
+    border: 1px solid var(--accent);
+    border-radius: var(--border--soft);
+}
+
+.form__input-field:focus {
+    outline: 1px solid var(--accent);
+    border-color: transparent;
+}
+
+.form__submit {
+    display: block;
+    width: 100%;
+
+    color: white;
+}
