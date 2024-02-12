@@ -126,14 +126,14 @@
                 <hr class="form__sep">
 
                 <div class="form__content">
-                    <div class="form__input vertical">
-                        <label for="tea" class="form__label">Type de The:</label>
 
-                        <select name="tea_id" id="tea" class="form__input-field">
-                            <option value="0">Black tea</option>
-                            <option value="1">Green tea</option>
-                            <option value="2">White tea</option>
-                        </select>
+                    <div class="form__input vertical">
+                        <label for="nom" class="form__label">Nom:</label>
+
+                        <div>
+                            <input type="text" name="nom" id="occupation" class="form__input-field" />
+                            <!-- <span class="form__input-field unit">m<sup>2</sup></span> -->
+                        </div>
                     </div>
 
                     <div class="form__input vertical">
@@ -154,8 +154,7 @@
                         </div>
                     </div>
                 </div>
-
-                <input type="submit" value="Modifier" class="form__submit btn" />
+                <button type="submit" class="form__submit btn">Submit</button>
             </form>
         </section>
     </div>

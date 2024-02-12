@@ -20,7 +20,7 @@
                 </div>
 
                 <div class="profile__details">
-                    <span class="profile__uid"><?php $_SESSION['user']['username']; ?></span>
+                    <span class="profile__uid"><?php echo $_SESSION['user']['username']; ?></span>
                     <span class="profile__status">Admin</span>
                 </div>
             </div>
