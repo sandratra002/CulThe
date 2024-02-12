@@ -7,6 +7,18 @@ div {
 div {
 }
 
+.user_icon{
+  width: 100px;
+  height: 100px;
+  color: var(--bs-body-bg);
+  background: var(--bs-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  border-radius: 50%;
+}
+
 .align-items-center {
   align-items: center!important;
 }
