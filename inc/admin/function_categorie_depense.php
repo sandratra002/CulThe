@@ -24,7 +24,6 @@
 
     function update_categorie_depense($id,$libelle){
         $request = "UPDATE culthe_categorie_depense SET libelle='%s' WHERE id=%s";
-        $request = sprintf($request,$libelle);
+        $request = sprintf($request,$libelle, $id);
         mysqli_query(dbconnect(),$request);
     }
-?>

@@ -6,6 +6,41 @@ a{
   text-decoration : none;
 }
 
+.popup{
+  position: absolute;
+
+  padding: .5em;
+
+  top: 0;
+  left: 50%;  
+  opacity: 0;
+  width: 200px;
+  text-align: center;
+  color: white;
+
+  border-radius: 10px;
+  animation: popupAnimation 2000ms 0s forwards ease 1;
+}
+
+.popup.error{
+  background: var(--error-bg);
+  border: var(--error-border);
+}
+
+.popup.success{
+  background: var(--success-bg);
+  border: var(--success-border);
+}
+
+@keyframes popupAnimation {
+  0%, 100%{
+
+  }60%{
+      opacity: 1;
+      top: 5%;
+  }
+}
+
 :root {
   --bs-breakpoint-xs: 0;
   --bs-breakpoint-sm: 576px;
@@ -123,6 +158,11 @@ body {
 }
 
 :root {
+  --error-bg : #d9534f;
+  --error-border : #d43f3a;
+  --success-bg : #5cb85c;
+  --success-border : #4cae4c;
+
   --bs-breakpoint-xs: 0;
   --bs-breakpoint-sm: 576px;
   --bs-breakpoint-md: 768px;

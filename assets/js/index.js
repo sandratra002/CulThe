@@ -18,6 +18,52 @@ const getTableValues = () =>{
     return data;
 };
 
+const deleteRow = (tableId, rowIndex) => {
+    const table = document.getElementById(tableId);
+    if (table && rowIndex >= 0 && rowIndex < table.rows.length) {
+      table.deleteRow(rowIndex);
+    } else {
+      console.error(`Invalid row index: ${rowIndex}`);
+    }
+  }
+  
+// const updateValue = (tableId, rowIndex, headerLabel, newValue) => {
+//     const table = document.getElementById(tableId);
+//     if (table && rowIndex >= 0 && rowIndex < table.rows.length) {
+//         const row = table.rows[rowIndex];
+//         const cells = Array.from(row.querySelectorAll('td, th')); 
+//         const index = cells.findIndex(cell => cell.textContent === headerLabel); 
+//         if (index !== -1) {
+//             cells[index].textContent = newValue; // Update cell content
+//         } else {
+//             console.error(`Header label "${headerLabel}" not found in row ${rowIndex}`);
+//         }
+//     } else {
+//         console.error(`Invalid row index: ${rowIndex}`);
+//     }
+// }
+
+function updateValue(tableId, rowIndex, headerLabel, newValue) {
+    const table = document.getElementById(tableId);
+    if (table && rowIndex >= 0 && rowIndex < table.rows.length) {
+      const headerRow = table.rows[0]; // Assume header row is the first row
+      const headerCells = headerRow.querySelectorAll('th');
+      const cellIndex = Array.from(headerCells).findIndex(cell => cell.textContent === headerLabel);
+      if (cellIndex !== -1) {
+        const row = table.rows[rowIndex];
+        const cellToChange = row.cells[cellIndex];
+        cellToChange.textContent = newValue;
+      } else {
+        console.error(`Header label "${headerLabel}" not found in the table`);
+      }
+    } else {
+      console.error(`Invalid row index: ${rowIndex}`);
+    }
+  }
+  
+  
+  
+
 const ajax = (method, link, formData) =>{
     return new Promise((resolve, reject) =>{
         let xhr = new XMLHttpRequest();
@@ -25,7 +71,11 @@ const ajax = (method, link, formData) =>{
         xhr.onreadystatechange = () =>{
             if(xhr.readyState == 4){
                 if(xhr.status == 200){
-                    resolve(xhr.responseText);
+                    if(xhr.responseText.indexOf("success") != 0){
+                        resolve(xhr.responseText);
+                    }else{
+                        reject(xhr.responseText);
+                    }
                 }else{
                     reject(xhr.responseText);
                 }
@@ -41,4 +91,16 @@ const ajax = (method, link, formData) =>{
         xhr.open(method, link);
         xhr.send(formData);
     });
-}
+};
+
+const popup = (message, classes) =>{
+    let container = document.querySelector("body");
+    let popup = document.createElement("div");
+    popup.classList = `${classes}`;
+    popup.innerHTML = `${message}`;
+    container.appendChild(popup);
+
+    setTimeout(() =>{
+        container.removeChild(popup)
+    }, 3000);
+};
