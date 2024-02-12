@@ -38,6 +38,8 @@
             </div>
         </div>
     </section>
+
+    <?php include("../shared/footer.php"); ?>
 </body>
 
 </html>
