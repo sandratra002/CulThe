@@ -18,7 +18,7 @@
     }
 
     function update_variete_the($id,$nom,$occupation,$rendement){
-        $request = "UPDATE culthe_variete_the SET nom=%s, occupation=%s,rendement=%s WHERE id=%s";
+        $request = "UPDATE culthe_variete_the SET nom='%s', occupation=%s,rendement=%s WHERE id=%s";
         $request = sprintf($request,$nom,$occupation,$rendement,$id);
         mysqli_query(dbconnect(),$request);
     }
