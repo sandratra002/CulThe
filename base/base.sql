@@ -141,6 +141,14 @@ CREATE OR REPLACE VIEW v_culthe_info_user AS
     ON c_u.id = c_t.id
 ;
 
+CREATE OR REPLACE VIEW v_culthe_info_cueilleur AS 
+    SELECT cc.id AS id_cueilleur, cc.nom AS nom_cueilleur, cc.date_naissance AS date_naissance , cg.libelle AS genre
+    FROM culthe_cueilleur 
+    AS cc 
+    JOIN culthe_genre
+    AS cg 
+    ON cc.id_genre=cg.id;
+
 CREATE OR REPLACE VIEW v_culthe_info_parcelle AS 
     SELECT cp.id AS id_parcelle, cp.numero AS numero_parcelle, cp.surface AS surface_parcelle, cvt.id AS id_variete_the, cvt.nom AS nom_variete_the, cvt.occupation AS occupation_the, cvt.rendement AS rendement_par_mois
     FROM culthe_parcelle 
@@ -148,3 +156,4 @@ CREATE OR REPLACE VIEW v_culthe_info_parcelle AS
     JOIN culthe_variete_the 
     AS cvt 
     ON cp.id_variete_the=cvt.id;
+
