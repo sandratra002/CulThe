@@ -4,11 +4,11 @@
         <div>
             <nav class="header__nav nav">
                 <ul>
-                    <li class="nav__item"><a href="">Cultures</a></li>
-                    <li class="nav__item"><a href="">Parcelles</a></li>
-                    <li class="nav__item"><a href="">Ceuilleurs</a></li>
-                    <li class="nav__item"><a href="">Depenses</a></li>
-                    <li class="nav__item"><a href="">Salaire</a></li>
+                    <li class="nav__item"><a href="main.php?page=the">Cultures</a></li>
+                    <li class="nav__item"><a href="main.php?page=parcelle">Parcelles</a></li>
+                    <li class="nav__item"><a href="main.php?page=cueilleur">Ceuilleurs</a></li>
+                    <li class="nav__item"><a href="main.php?page=depense">Depenses</a></li>
+                    <li class="nav__item"><a href="main.php?page=salaire">Salaire</a></li>
                 </ul>
             </nav>
             

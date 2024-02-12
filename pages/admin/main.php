@@ -1,7 +1,7 @@
 <?php
     $include = "default.php";
     if(isset($_GET["page"])){
-        $include = "../admin/" . $_GET["page"] . "/main.php";
+        $include = "../admin/" . $_GET["page"] . ".php";
     }
 ?>
 
