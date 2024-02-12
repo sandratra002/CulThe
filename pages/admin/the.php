@@ -28,7 +28,7 @@
         </section>
 
         <section class="right">
-            <form action="" method="post" id="login-form" class="form">
+            <form action="../../handler/admin/the_handler.php" method="post" id="login-form" class="form">
                 <h1 class="form__title">Gestion de cultures</h1>
                 <hr class="form__sep">
                 <div class="form__content">

@@ -21,7 +21,9 @@ const getTableValues = () =>{
 const deleteRow = (tableId, rowIndex) => {
     const table = document.getElementById(tableId);
     if (table && rowIndex >= 0 && rowIndex < table.rows.length) {
-      table.deleteRow(rowIndex);
+        //   table.deleteRow(rowIndex);
+        let row = table.rows[rowIndex];
+        row.style.display = "none";
     } else {
       console.error(`Invalid row index: ${rowIndex}`);
     }
@@ -46,7 +48,22 @@ function updateValue(tableId, rowIndex, headerLabel, newValue) {
     }
 }
   
+const setSelectByValue = (selectId, value) => {
+    const selectElement = document.getElementById(selectId);
   
+    if (selectElement) {
+      for (const option of selectElement.options) {
+        if (option.textContent === value) {
+          option.selected = true;
+          return; // Success, no need to check further
+        }
+      }
+  
+      console.warn(`Option with value "${value}" not found in select "${selectId}".`);
+    } else {
+      console.error(`Select element with ID "${selectId}" not found.`);
+    }
+}
   
 
 const ajax = (method, link, formData) =>{

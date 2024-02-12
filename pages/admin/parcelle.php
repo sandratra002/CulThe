@@ -20,6 +20,10 @@
                         <td class="id number"><?php echo($list_parcel[$i]['numero_parcelle']); ?></td>
                         <td class="surface"><?php echo($list_parcel[$i]['surface_parcelle']); ?></td>
                         <td class="name"><?php echo($list_parcel[$i]['nom_variete_the']); ?></td>
+                        <td>
+                            <a href="#" class="edit-btn"><i class="fa fa-edit"></i></a>
+                            <a href="#" class="delete-btn"><i class="fa fa-trash"></i></a>
+                        </td>
                     </tr>
                 <?php } ?>
                 </table>

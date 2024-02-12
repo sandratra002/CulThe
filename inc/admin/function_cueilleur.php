@@ -23,7 +23,7 @@
     }
 
     function update_cueilleur($id,$nom,$id_genre,$date_naissance){
-        $request = "UPDATE culthe_parcelle SET nom='%s', id_genre=%s,date_naissance='%s' WHERE id=%s";
+        $request = "UPDATE culthe_cueilleur SET nom='%s', id_genre=%s,date_naissance='%s' WHERE id=%s";
         $request = sprintf($request,$nom,$id_genre,$date_naissance,$id);
         mysqli_query(dbconnect(),$request);
     }
