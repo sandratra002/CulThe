@@ -22,4 +22,12 @@
         $request = sprintf($request,$id);
         mysqli_query(dbconnect(),$request);
     }
+
+    function update_categorie_depense($id,$libelle){
+        $request = "UPDATE culthe_categorie_depense SET libelle='%s' WHERE id=%s";
+        $request = sprintf($request,$libelle);
+        echo($request);
+        mysqli_query(dbconnect(),$request);
+    }
+
 ?>

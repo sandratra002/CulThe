@@ -11,7 +11,7 @@
     }
 
     function insert_cueilleur($nom,$id_genre,$date_naissance){
-        $request = "INSERT INTO culthe_cueilleur VALUES(NULL,%d,%d,%d)";
+        $request = "INSERT INTO culthe_cueilleur VALUES(NULL,%s,%s,%s)";
         $request = sprintf($request,$nom,$id_genre,$date_naissance);
         echo $request;
         mysqli_query(dbconnect(),$request);
@@ -24,7 +24,7 @@
     }
 
     function update_cueilleur($id,$nom,$id_genre,$date_naissance){
-        $request = "UPDATE culthe_parcelle SET nom=%s, id_genre=%s,date_naissance=%s WHERE id=%s";
+        $request = "UPDATE culthe_parcelle SET nom='%s', id_genre=%s,date_naissance='%s' WHERE id=%s";
         $request = sprintf($request,$nom,$id_genre,$date_naissance,$id);
         echo($request);
         mysqli_query(dbconnect(),$request);
