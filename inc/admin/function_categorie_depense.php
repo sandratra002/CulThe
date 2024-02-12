@@ -16,4 +16,10 @@
         echo $request;
         mysqli_query(dbconnect(),$request);
     }
+
+    function delete_categorie_depense_by_id($id){
+        $request = "DELETE FROM culthe_categorie_depense WHERE id=%s";
+        $request = sprintf($request,$id);
+        mysqli_query(dbconnect(),$request);
+    }
 ?>
