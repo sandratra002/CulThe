@@ -1,5 +1,5 @@
 <div class="table-responsive">
-    <a class="btn btn-primary ms-md-2" role="button" href="#form">Insert <i class="fa fa-plus"></i></a>
+<a class="btn btn-primary ms-md-2" role="button" href="#form">Insert <i class="fa fa-plus"></i></a>
     <table class="table">
         <thead>
             <tr>

@@ -6,11 +6,11 @@
         <div id="navcol-2" class="collapse navbar-collapse">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Tea</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Parecelle</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Picker</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Charge</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Charge Category</a></li>
+                <li class="nav-item"><a class="nav-link" href="main.php?page=tea">Tea</a></li>
+                <li class="nav-item"><a class="nav-link" href="main.php?page=parecelle">Parecelle</a></li>
+                <li class="nav-item"><a class="nav-link" href="main.php?page=picker">Picker</a></li>
+                <li class="nav-item"><a class="nav-link" href="main.php?page=tea">Charge</a></li>
+                <li class="nav-item"><a class="nav-link" href="main.php?page=tea">Salary</a></li>
             </ul><a class="btn btn-primary ms-md-2" role="button" href="#">Logout <i class="fa fa-sign-out"></i></a>
         </div>
     </div>
