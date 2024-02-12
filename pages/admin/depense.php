@@ -32,20 +32,15 @@
         </section>
 
         <section class="right">
-            <form action="" method="post" id="login-form" class="form">
+            <form action="../../handler/admin/depense_handler.php" method="post" id="login-form" class="form">
                 <h1 class="form__title">Gestion des depenses</h1>
-
                 <hr class="form__sep">
-
                 <div class="form__content">
-
                     <div class="form__input vertical">
                         <label for="expense" class="form__label">Libelle de categorie:</label>
-
                         <input type="text" name="expense_label" id="expense" class="form__input-field" />
                     </div>
                 </div>
-
                 <input type="submit" value="Inserer" class="form__submit btn" />
             </form>
         </section>

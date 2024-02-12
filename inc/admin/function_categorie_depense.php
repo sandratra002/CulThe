@@ -11,7 +11,7 @@
     }
 
     function insert_categorie_depense($libelle){
-        $request = "INSERT INTO culthe_categorie_depense VALUES(NULL,%d)";
+        $request = "INSERT INTO culthe_categorie_depense VALUES(NULL,'%s')";
         $request = sprintf($request,$libelle);
         mysqli_query(dbconnect(),$request);
     }
