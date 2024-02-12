@@ -29,5 +29,4 @@
         echo($request);
         mysqli_query(dbconnect(),$request);
     }
-
 ?>

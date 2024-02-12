@@ -129,6 +129,12 @@ CREATE TABLE culthe_cueuillette(
     FOREIGN KEY(id_parcelle) REFERENCES culthe_parcelle(id)
 )Engine=InnoDb;
 
+CREATE TABLE culthe_salaire(
+    id INT PRIMARY KEY AUTO_INCREMENT, 
+    id_cueilleur INT NOT NULL, 
+    montant DECIMAL(18,2) NOT NULL
+)Engine=InnoDb;
+
 
 
 --views--
