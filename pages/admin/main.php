@@ -1,5 +1,6 @@
 <?php
     session_start();
+    require("../../inc/functions.php");
     $include = "default.php";
     if(isset($_GET["page"])){
         $include = "../admin/" . $_GET["page"] . ".php";

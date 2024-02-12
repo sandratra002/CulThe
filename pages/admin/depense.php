@@ -1,6 +1,4 @@
 <?php
-
-    require("../../inc/functions.php");
     $depenses = get_all_categorie_depense();
 ?>
 
@@ -46,7 +44,7 @@
                     </div>
                 </div>
 
-                <input type="submit" value="Inserer" class="form__submit btn" />
+                <input type="submit" value="Inserer" class="form__submit btn" id="form__submit-btn" />
             </form>
         </section>
 </div>
