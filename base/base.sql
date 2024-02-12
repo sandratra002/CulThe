@@ -135,6 +135,9 @@ CREATE TABLE culthe_salaire(
     montant DECIMAL(18,2) NOT NULL
 )Engine=InnoDb;
 
+INSERT INTO culthe_salaire VALUES
+    (NULL,1,100000);
+
 
 
 --views--
@@ -162,4 +165,15 @@ CREATE OR REPLACE VIEW v_culthe_info_parcelle AS
     JOIN culthe_variete_the 
     AS cvt 
     ON cp.id_variete_the=cvt.id;
+
+CREATE OR REPLACE VIEW v_culthe_info_salaire AS 
+    SELECT cs.id AS id_salaire,cc.nom AS nom_cueilleur,cs.id_cueilleur AS id_cueilleur,cc.date_naissance AS date_naissance,cg.libelle AS genre, cs.montant AS montant 
+    FROM culthe_salaire 
+    AS cs 
+    JOIN culthe_cueilleur 
+    AS cc 
+    ON cs.id_cueilleur=cc.id
+    JOIN culthe_genre 
+    AS cg 
+    ON cc.id_genre=cg.id;
 
