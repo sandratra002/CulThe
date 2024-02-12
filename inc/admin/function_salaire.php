@@ -1,6 +1,6 @@
 <?php
     function get_all_info_salaire(){
-        $request = "SELECT * FROM v_culthe_info_cueilleur";
+        $request = "SELECT * FROM v_culthe_info_salaire";
         $temp = mysqli_query(dbconnect(),$request);
         $result = [];
         while($donne = mysqli_fetch_array($temp)){
