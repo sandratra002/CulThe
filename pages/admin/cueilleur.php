@@ -1,6 +1,10 @@
+<?php
+    $list_cueilleur = get_all_info_cueilleur();
+?>
+
 <div class="body double-col">
         <section class="left">
-            <h1 class="section__title">Tableau des employees</h1>
+            <h1 class="section__title">Liste des Cueilleurs</h1>
 
             <hr class="section__sep">
 
@@ -9,124 +13,17 @@
                     <tr>
                         <th class="id number">ID</th>
                         <th class="name">Nom</th>
-                        <th class="name">Nom d'Identification</th>
                         <th class="date">Date de naissance</th>
-                        <th class="name">Statut d'emploiement</th>
-                        <th class="money">Salaire</th>
-                    </tr>
-
+                        <th class="money">Genre</th>
+                    </tr>
+                <?php for($i=0; $i<count($list_cueilleur); $i++){ ?>
                     <tr>
-                        <td class="id number">1</td>
-                        <td class="name">Rakotonanahary</td>
-                        <td class="name">rakotozehri</td>
-                        <td class="date">21/02/1998</td>
-                        <td class="name">Oui</td>
-                        <td class="money">12,300.00</td>
+                        <td class="id number"><?php echo($list_cueilleur['id']); ?></td>
+                        <td class="name"><?php echo($list_cueilleur['nom']); ?></td>
+                        <td class="date"><?php echo($list_cueilleur['date_naissance']); ?></td>
+                        <td class="gender"><?php echo($list_cueilleur['genre']); ?></td>
                     </tr>
-                    <tr>
-                        <td class="id number">1</td>
-                        <td class="name">Rakotonanahary</td>
-                        <td class="name">rakotozehri</td>
-                        <td class="date">21/02/1998</td>
-                        <td class="name">Oui</td>
-                        <td class="money">12,300.00</td>
-                    </tr>
-                    <tr>
-                        <td class="id number">1</td>
-                        <td class="name">Rakotonanahary</td>
-                        <td class="name">rakotozehri</td>
-                        <td class="date">21/02/1998</td>
-                        <td class="name">Oui</td>
-                        <td class="money">12,300.00</td>
-                    </tr>
-                    <tr>
-                        <td class="id number">1</td>
-                        <td class="name">Rakotonanahary</td>
-                        <td class="name">rakotozehri</td>
-                        <td class="date">21/02/1998</td>
-                        <td class="name">Oui</td>
-                        <td class="money">12,300.00</td>
-                    </tr>
-                    <tr>
-                        <td class="id number">1</td>
-                        <td class="name">Rakotonanahary</td>
-                        <td class="name">rakotozehri</td>
-                        <td class="date">21/02/1998</td>
-                        <td class="name">Oui</td>
-                        <td class="money">12,300.00</td>
-                    </tr>
-                    <tr>
-                        <td class="id number">1</td>
-                        <td class="name">Rakotonanahary</td>
-                        <td class="name">rakotozehri</td>
-                        <td class="date">21/02/1998</td>
-                        <td class="name">Oui</td>
-                        <td class="money">12,300.00</td>
-                    </tr>
-                    <tr>
-                        <td class="id number">1</td>
-                        <td class="name">Rakotonanahary</td>
-                        <td class="name">rakotozehri</td>
-                        <td class="date">21/02/1998</td>
-                        <td class="name">Oui</td>
-                        <td class="money">12,300.00</td>
-                    </tr>
-                    <tr>
-                        <td class="id number">1</td>
-                        <td class="name">Rakotonanahary</td>
-                        <td class="name">rakotozehri</td>
-                        <td class="date">21/02/1998</td>
-                        <td class="name">Oui</td>
-                        <td class="money">12,300.00</td>
-                    </tr>
-                    <tr>
-                        <td class="id number">1</td>
-                        <td class="name">Rakotonanahary</td>
-                        <td class="name">rakotozehri</td>
-                        <td class="date">21/02/1998</td>
-                        <td class="name">Oui</td>
-                        <td class="money">12,300.00</td>
-                    </tr>
-                    <tr>
-                        <td class="id number">1</td>
-                        <td class="name">Rakotonanahary</td>
-                        <td class="name">rakotozehri</td>
-                        <td class="date">21/02/1998</td>
-                        <td class="name">Oui</td>
-                        <td class="money">12,300.00</td>
-                    </tr>
-                    <tr>
-                        <td class="id number">1</td>
-                        <td class="name">Rakotonanahary</td>
-                        <td class="name">rakotozehri</td>
-                        <td class="date">21/02/1998</td>
-                        <td class="name">Oui</td>
-                        <td class="money">12,300.00</td>
-                    </tr>
-                    <tr>
-                        <td class="id number">1</td>
-                        <td class="name">Rakotonanahary</td>
-                        <td class="name">rakotozehri</td>
-                        <td class="date">21/02/1998</td>
-                        <td class="name">Oui</td>
-                        <td class="money">12,300.00</td>
-                    </tr>
-                    <tr>
-                        <td class="id number">1</td>
-                        <td class="name">Rakotonanahary</td>
-                        <td class="name">rakotozehri</td>
-                        <td class="date">21/02/1998</td>
-                        <td class="name">Oui</td>
-                        <td class="money">12,300.00</td>
-                    </tr>
-                    <tr>
-                        <td class="id number">1</td>
-                        <td class="name">Rakotonanahary</td>
-                        <td class="name">rakotozehri</td>
-                        <td class="date">21/02/1998</td>
-                        <td class="name">Oui</td>
-                        <td class="money">12,300.00</td>
-                    </tr>
+                <?php } ?>
                 </table>
             </div>
         </section>

@@ -1,4 +1,5 @@
 <?php
+    require("../../inc/functions.php");
     session_start();
     $include = "default.php";
     if(isset($_GET["page"])){
