@@ -114,8 +114,8 @@ INSERT INTO culthe_categorie_depense VALUE
 CREATE TABLE culthe_depense(
     id INT PRIMARY KEY AUTO_INCREMENT, 
     id_categorie_depense INT NOT NULL, 
-    montant DECIMAL(18,2)L NOT NULL, 
-    date_depense DATETIME NOT NULL,
+    montant DECIMAL(18,2) NOT NULL, 
+    date_depense DATE NOT NULL,
     FOREIGN KEY(id_categorie_depense) REFERENCES culthe_categorie_depense(id)
 )Engine=InnoDb;
 
@@ -138,9 +138,6 @@ CREATE TABLE culthe_salaire(
 INSERT INTO culthe_salaire VALUES
     (NULL,1,100000);
 
-
-
---views--
 CREATE OR REPLACE VIEW v_culthe_info_user AS
     SELECT c_u.id AS id, c_u.username AS username, c_t.id AS id_type, c_t.libelle AS libelle
     FROM culthe_user 

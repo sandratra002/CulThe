@@ -1,5 +1,4 @@
 <?php
-
     function get_all_variete_the(){
         $request = "SELECT * FROM culthe_variete_the";
         $temp = mysqli_query(dbconnect(),$request);
