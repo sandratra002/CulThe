@@ -1,5 +1,5 @@
 <header id="main-header">
-        <h1 class="header__logo"><a href="">Teebrise</a></h1>
+        <h1 class="header__logo"><a href="">CulThe</a></h1>
 
         <div>
             <nav class="header__nav nav">
@@ -20,7 +20,7 @@
                 </div>
 
                 <div class="profile__details">
-                    <span class="profile__uid">Rakotonanahary</span>
+                    <span class="profile__uid"><?php $_SESSION['user']['username']; ?></span>
                     <span class="profile__status">Admin</span>
                 </div>
             </div>

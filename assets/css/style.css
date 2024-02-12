@@ -1,6 +1,10 @@
 html {
 }
 
+a{
+  color: var(--text-main);
+  text-decoration : none;
+}
 
 :root {
   --bs-breakpoint-xs: 0;
