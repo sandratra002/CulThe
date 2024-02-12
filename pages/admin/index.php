@@ -37,7 +37,7 @@
                             </form>
                         </div>
                         <?php if(isset($_SESSION['error'])) {?>
-                        <p style="padding: 1px;padding-left: 130px;color:red;"><? echo $_SESSION['error']; ?></p>
+                        <p style="padding: 1px;padding-left: 130px;color:red;"><?php echo $_SESSION['error']; ?></p>
                         <?php } ?>
                     </div>
                 </div>
