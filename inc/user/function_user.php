@@ -19,8 +19,8 @@
         mysqli_query(dbconnect(),$request);
     }
 
-    function insert_depense($id_categorie_depense,$date,$montant){
-        $request = "INSERT INTO culthe_depense VALUES(NULL,%s,%s,%d)";
+    function insert_depense($id_categorie_depense,$montant,$date){
+        $request = "INSERT INTO culthe_depense VALUES(NULL,%s,%s,'%s')";
         $request = sprintf($request,$id_categorie_depense,$montant,$date);
         echo($request);
         mysqli_query(dbconnect(),$request);

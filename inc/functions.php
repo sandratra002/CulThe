@@ -8,5 +8,5 @@
     require("admin/function_categorie_depense.php");
     require("admin/function_salaire.php");
 
-    insert_depense(1,'2024-1-1 00:00',188000);
+    insert_depense(1,188000,'2023-1-1 00:00');
 ?>
