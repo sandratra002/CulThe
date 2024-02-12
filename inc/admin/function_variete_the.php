@@ -22,4 +22,10 @@
         $request = sprintf($request,$nom,$occupation,$rendement,$id);
         mysqli_query(dbconnect(),$request);
     }
+    
+    function delete_variete_the_by_id($id){
+        $request = "DELETE FROM culthe_variete_the WHERE id=%s";
+        $request = sprintf($request,$id);
+        mysqli_query(dbconnect(),$request);
+    }
 ?>
