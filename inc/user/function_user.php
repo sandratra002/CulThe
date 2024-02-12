@@ -13,6 +13,17 @@
         return $result;
     }   
 
+    function get_all_genre(){
+        $request = "SELECT * FROM culthe_genre";
+        $temp = mysqli_query(dbconnect(),$request);
+        $result = array();
+        while($donne = mysqli_fetch_array($temp)){
+            $result[] = $donne;
+        }
+        mysqli_free_result($temp);
+        return $result;
+    }
+
     function insert_cueillette($id_cueilleur,$id_parcelle,$date_cueillette,$poids_cueilli){
         $request = "INSERT INTO culthe_cueillette VALUES(NULL,%s,%s,'%s',%s)";
         $request = sprintf($request,$id_cueilleur,$id_parcelle,$date_cueillette,$poids_cueilli);
