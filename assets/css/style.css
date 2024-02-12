@@ -21,6 +21,13 @@ a{
   }
 }
 
+.edit-btn i{
+  color : green;
+}
+.delete-btn i{
+  color : red;
+}
+
 .user_icon{
   width: 100px;
   height: 100px;

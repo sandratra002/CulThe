@@ -25,8 +25,7 @@
     <link rel="stylesheet" href="../../assets/css/form.css">
     <link rel="stylesheet" href="../../assets/css/home.css">
     <link rel="stylesheet" href="../../assets/css/layout.css">
-    <!-- <link rel="stylesheet" href="../../assets/css/login.css"> -->
-    
+
 </head>
 <style>
 
