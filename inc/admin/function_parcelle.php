@@ -11,8 +11,9 @@
     }
 
     function insert_parcelle($numero,$surface,$id_variete_the){
-        $request = "INSERT INTO culthe_parcelle VALUES(NULL,%d,%d,%d)";
-        $request = sprintf($request,$numero,$surface,$id_variete_the);
+        $request = "INSERT INTO culthe_parcelle VALUES(NULL,%d,%d,%d,%d)";
+        $nb_pieds = round(($surface * 10000)/get_occupation_variete_the_by_id($id_variete_the));
+        $request = sprintf($request,$numero,$surface,$nb_pieds,$id_variete_the);
         mysqli_query(dbconnect(),$request);
     }
 
@@ -26,9 +27,5 @@
         $request = "UPDATE culthe_parcelle SET numero=%s, surface=%s,id_variete_the=%s WHERE id=%s";
         $request = sprintf($request,$numero,$surface,$id_variete_the,$id);
         mysqli_query(dbconnect(),$request);
-    }
-
-    function regenerate_all_parcelle(){
-        $request = ""
     }
 ?>
