@@ -72,4 +72,14 @@
         }
         echo json_encode($result);
     }
+
+    function get_list_paiement_cueilleur($date_debut,$date_fin){
+        $list = array();
+        while($date_debut <= $date_fin){
+            $list[] = get_total_paiement_cueilleur($date_debut);
+            $date_debut = date('Y-m-d',strtotime($date_debut.'+ 1 days'));
+            echo "Date debut : ".$date_debut;
+        }
+        echo json_encode($list);
+    }
 ?>
