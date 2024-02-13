@@ -8,12 +8,13 @@
             <hr class="section__sep">
 
             <div class="section__content">
-                <table>
+                <table id="table">
                     <tr>
-                        <th class="id number">ID Type</th>
-                        <th class="name">Nom du The</th>
-                        <th class="occupation">Occupation en m<sup>2</sup></th>
-                        <th class="rendement">Rendement en Kg/mois</th>
+                        <th class="id number">ID</th>
+                        <th class="name">Nom</th>
+                        <th class="occupation">Occupation</th>
+                        <th class="rendement">Rendement</th>
+                        <th>Action</th>
                     </tr>
                     <?php for($i=0; $i<count($list_variete_the); $i++){ ?>
                     <tr>
@@ -21,6 +22,10 @@
                         <td class="surface"><?php echo($list_variete_the[$i]['nom']); ?></td>
                         <td class="name"><?php echo($list_variete_the[$i]['occupation']); ?></td>
                         <td class="rendement"><?php echo($list_variete_the[$i]['rendement']); ?></td>
+                        <td>
+                            <a href="#" class="edit-btn"><i class="fa fa-edit"></i></a>
+                            <a href="#" class="delete-btn"><i class="fa fa-trash"></i></a>
+                        </td>
                     </tr>
                 <?php } ?>
                 </table>
@@ -35,7 +40,7 @@
                     <div class="form__input vertical">
                         <label for="nom" class="form__label">Nom : </label>
                         <div>
-                            <input type="text" name="nom" id="occupation" class="form__input-field" />
+                            <input type="text" name="nom" id="nom" class="form__input-field" />
                             <!-- <span class="form__input-field unit">m<sup>2</sup></span> -->
                         </div>
                     </div>
@@ -55,7 +60,8 @@
                         </div>
                     </div>
                 </div>
-                <button type="submit" class="form__submit btn">Submit</button>
+                <button type="submit" class="form__submit btn" id="form__submit-btn">Submit</button>
             </form>
         </section>
     </div>
+    <script src="../../assets/js/the.js"></script>

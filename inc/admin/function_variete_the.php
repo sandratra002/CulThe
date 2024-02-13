@@ -23,8 +23,9 @@
     }
     
     function delete_variete_the_by_id($id){
-        $request = "DELETE FROM culthe_variete_the WHERE id=%s";
+        $request = "DELETE FROM culthe_variete_the WHERE id=%s CASCADE";
         $request = sprintf($request,$id);
+        echo $request;
         mysqli_query(dbconnect(),$request);
     }
 ?>
