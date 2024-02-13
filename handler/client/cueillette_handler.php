@@ -12,6 +12,7 @@
         $poids = $_POST['poids'];
         try {
             insert_cueillette($cueilleur,$parcel,$date_cueillete,$poids);
+            // header("Location: ../../pages/client/main.php?page=cueillettes");
             echo("insertion successful :) ");
         } catch (\Throwable $th) {
             echo ("An error has occured :( ");
