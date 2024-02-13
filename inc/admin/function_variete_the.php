@@ -10,9 +10,9 @@
         return $result;
     }
 
-    function insert_variete_the($nom,$occupation,$rendement){
-        $request = "INSERT INTO culthe_variete_the VALUES(NULL,'%s',%s,%s)";
-        $request = sprintf($nom,$occupation,$rendement);
+    function insert_variete_the($nom,$occupation,$rendement,$prix_vente){
+        $request = "INSERT INTO culthe_variete_the VALUES(NULL,'%s',%s,%s,%s)";
+        $request = sprintf($nom,$occupation,$rendement,$prix_vente);
         mysqli_query(dbconnect(),$request);
     }
 
