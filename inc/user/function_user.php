@@ -30,6 +30,17 @@
         mysqli_query(dbconnect(),$request);
     }
 
+    function get_all_cueillette(){
+        $request = "SELECT * FROM culthe_cueillette";
+        $temp = mysqli_query(dbconnect(),$request);
+        $result = array();
+        while($donne = mysqli_fetch_array($temp)){
+            $result[] = $donne;
+        }
+        mysqli_free_result($temp);
+        return $result;
+    }
+
     function insert_depense($id_categorie_depense,$montant,$date){
         $request = "INSERT INTO culthe_depense VALUES(NULL,%s,%s,'%s')";
         $request = sprintf($request,$id_categorie_depense,$montant,$date);
