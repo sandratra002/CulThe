@@ -6,9 +6,7 @@
 <div class="body double-col">
         <section class="left">
             <h1 class="section__title">Historique des depenses</h1>
-
             <hr class="section__sep">
-
             <div class="section__content">
                 <table>
                     <tr>
