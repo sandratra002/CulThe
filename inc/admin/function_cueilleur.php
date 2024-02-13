@@ -10,7 +10,7 @@
         return $result;
     }
 
-    function insert_cueilleur($nom,$id_genre,$date_naissance){
+    function insert_cueilleur($nom,$id_genre,$date_naissance,$bonus,$malus,$poids_minimal){
         $request = "INSERT INTO culthe_cueilleur VALUES(NULL,'%s',%s,'%s')";
         $request = sprintf($request,$nom,$id_genre,$date_naissance);
         mysqli_query(dbconnect(),$request);

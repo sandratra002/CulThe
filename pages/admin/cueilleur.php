@@ -23,13 +23,13 @@
                     </tr>
                 <?php for($i=0; $i<count($list_cueilleur); $i++){ ?>
                     <tr>
-                        <td class="id number"><?php echo($list_cueilleur[$i]['id_cueilleur']); ?></td>
-                        <td class="name"><?php echo($list_cueilleur[$i]['nom_cueilleur']); ?></td>
+                        <td class="id number"><?php echo($list_cueilleur[$i]['id']); ?></td>
+                        <td class="name"><?php echo($list_cueilleur[$i]['nom']); ?></td>
                         <td class="date"><?php echo($list_cueilleur[$i]['date_naissance']); ?></td>
-                        <td class="gender"><?php echo($list_cueilleur[$i]['genre']); ?></td>
+                        <td class="gender"><?php echo($list_cueilleur[$i]['libelle']); ?></td>
                         <td class="gender"><?php echo($list_cueilleur[$i]['poids_minimal']); ?></td>
                         <td class="gender"><?php echo($list_cueilleur[$i]['bonus']); ?></td>
-                        <td class="gender"><?php echo($list_cueilleur[$i]['mallus']); ?></td>
+                        <td class="gender"><?php echo($list_cueilleur[$i]['malus']); ?></td>
                         <td>
                             <a href="#" class="edit-btn"><i class="fa fa-edit"></i></a>
                             <a href="#" class="delete-btn"><i class="fa fa-trash"></i></a>

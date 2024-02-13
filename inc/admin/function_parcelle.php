@@ -18,6 +18,17 @@
         mysqli_query(dbconnect(),$request);
     }
 
+    function get_restant_parcelle_by_id($id){
+        $request = "SELECT restant FROM v_culthe_parcelle_restant WHERE id=".$id;
+        $temp = mysqli_query($request);
+        $result = null;
+        if(mysqli_num_rows($temp) != 0){
+            $result = mysqli_fetch_array($temp);
+        }
+        mysqli_free_result($temp);
+        return $result;
+    }
+
     function delete_parcelle_by_id($id){
         $request = "DELETE FROM culthe_parcelle WHERE id=%s";
         $request = sprintf($request,$id);
