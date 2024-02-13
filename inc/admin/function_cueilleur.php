@@ -31,7 +31,6 @@
     function get_cueilleur_by_id($id){
         $request = "SELECT * FROM v_culthe_info_cueilleur WHERE id= %s";
         $request = sprintf($request,$id);
-        echo $request;
         $temp = mysqli_query(dbconnect(),$request);
         $result = null;
         if(mysqli_num_rows($temp) == 0){
@@ -70,7 +69,8 @@
             );
             $result[] = $temp;
         }
-        echo json_encode($result);
+        return json_encode($result);
+        // echo json_encode($result);
     }
 
     function get_list_paiement_cueilleur($date_debut,$date_fin){
@@ -78,8 +78,6 @@
         while($date_debut <= $date_fin){
             $list[] = get_total_paiement_cueilleur($date_debut);
             $date_debut = date('Y-m-d',strtotime($date_debut.'+ 1 days'));
-            echo "Date debut : ".$date_debut;
         }
         echo json_encode($list);
     }
-?>
