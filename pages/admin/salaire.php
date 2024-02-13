@@ -41,7 +41,7 @@
                     <div class="form__input vertical">
                         <label for="tea" class="form__label">Cueilleur : </label>
                         <select name="cueilleur" id="tea" class="form__input-field">
-                            <?php for($i=0; $i<count($list_cueilleur); $i++){ ?>
+                            <?php for($i=0; $i<count($list_cueilleur); $i++){  ?>
                                 <option value="<?php echo $list_cueilleur[$i]['id_cueilleur']; ?>"><?php echo $list_cueilleur[$i]['nom_cueilleur']; ?></option>
                             <?php } ?>
                         </select>

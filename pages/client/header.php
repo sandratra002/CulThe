@@ -1,12 +1,12 @@
 <header id="main-header">
-        <h1 class="header__logo"><a href="">CulThe</a></h1>
+        <h1 class="header__logo"><a href="main.php?page=resultat">CulThe</a></h1>
 
         <div>
             <nav class="header__nav nav">
                 <ul>
+                    <li class="nav__item"><a href="main.php?page=resultat">Home</a></li>
                     <li class="nav__item"><a href="main.php?page=cueillettes">Cueillettes</a></li>
                     <li class="nav__item"><a href="main.php?page=depenses">Depenses</a></li>
-                    <li class="nav__item"><a href="main.php?page=resultat">Resultat</a></li>
                 </ul>
             </nav>
             
