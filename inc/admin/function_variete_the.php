@@ -33,4 +33,18 @@
         mysqli_query(dbconnect(),$chk);
         echo "delete fait";
     }
+
+    function get_occupation_variete_the_by_id($id){
+        $request = "SELECT occupation FROM culthe_variete_the WHERE id=%s";
+        $request = sprintf($request, $id);
+        $temp = mysqli_query(dbconnect(),$request);
+        $result = null;
+        if(mysqli_num_rows($temp) == 0){
+            return null;
+        }else{
+            $result = mysqli_fetch_array($temp);
+        }
+        mysqli_free_result($temp);
+        return $result;
+    }
 ?>

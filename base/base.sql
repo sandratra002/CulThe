@@ -35,15 +35,15 @@ CREATE TABLE culthe_variete_the(
 
 INSERT INTO culthe_variete_the VALUES
     (NULL,'Thé vert Sencha', 5.25, 8.75),
-    (NULL,'Thé noir Assam', 6.50, 7.90),
-    (NULL,'Thé oolong Tie Guan Yin', 4.75, 9.20),
-    (NULL,'Thé blanc Bai Hao Yin Zhen', 3.80, 10.50),
-    (NULL,'Thé pu-erh Sheng', 4.20, 10.00),
-    (NULL,'Thé vert Matcha', 6.80, 8.50),
-    (NULL,'Thé noir Darjeeling', 5.60, 9.80),
-    (NULL,'Thé oolong Da Hong Pao', 4.90, 9.40),
-    (NULL,'Thé blanc Shou Mei', 3.50, 10.80),
-    (NULL,'Thé pu-erh Shou', 4.40, 10.20);
+    (NULL,'Thé noir Assam', 5.25, 7.90),
+    (NULL,'Thé oolong Tie Guan Yin', 5.25, 9.20),
+    (NULL,'Thé blanc Bai Hao Yin Zhen', 5.25, 10.50),
+    (NULL,'Thé pu-erh Sheng', 5.25, 10.00),
+    (NULL,'Thé vert Matcha', 5.25, 8.50),
+    (NULL,'Thé noir Darjeeling', 5.25, 9.80),
+    (NULL,'Thé oolong Da Hong Pao', 5.25, 9.40),
+    (NULL,'Thé blanc Shou Mei', 5.25, 10.80),
+    (NULL,'Thé pu-erh Shou', 5.25, 10.20);
 
 CREATE TABLE culthe_parcelle(
     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -57,16 +57,16 @@ CREATE TABLE culthe_parcelle(
 )Engine=InnoDb;
 
 INSERT INTO culthe_parcelle VALUES
-    (NULL,1, 25.5, 1),
-    (NULL,2, 30.8, 3),
-    (NULL,3, 20.2, 5),
-    (NULL,4, 18.7, 7),
-    (NULL,5, 22.0, 9),
-    (NULL,6, 28.3, 2),
-    (NULL,7, 15.6, 4),
-    (NULL,8, 35.1, 6),
-    (NULL,9, 23.9, 8),
-    (NULL,10, 21.4, 10);
+    (NULL,1, 2,3809, 1),
+    (NULL,2, 3,5714, 3),
+    (NULL,3, 2,3809, 5),
+    (NULL,4, 1,1904, 7),
+    (NULL,5, 2,3809, 9),
+    (NULL,6, 2,3809, 2),
+    (NULL,7, 5,9523, 4),
+    (NULL,8, 5,9523, 6),
+    (NULL,9, 3,5714, 8),
+    (NULL,10, 2,3809, 10);
 
 CREATE TABLE culthe_genre(
     id INT PRIMARY KEY AUTO_INCREMENT, 
@@ -132,6 +132,9 @@ CREATE TABLE culthe_cueillette(
     FOREIGN KEY(id_parcelle) REFERENCES culthe_parcelle(id)
 )Engine=InnoDb;
 
+INSERT INTO culthe_cueillette VALUES 
+    (NULL,1,1,'2023-2-1',245);
+
 CREATE TABLE culthe_salaire(
     id INT PRIMARY KEY AUTO_INCREMENT, 
     id_cueilleur INT NOT NULL, 
@@ -159,7 +162,7 @@ CREATE OR REPLACE VIEW v_culthe_info_cueilleur AS
     ON cc.id_genre=cg.id;
 
 CREATE OR REPLACE VIEW v_culthe_info_parcelle AS 
-    SELECT cp.id AS id_parcelle, cp.numero AS numero_parcelle, cp.surface AS surface_parcelle, cvt.id AS id_variete_the, cvt.nom AS nom_variete_the, cvt.occupation AS occupation_the, cvt.rendement AS rendement_par_mois
+    SELECT cp.id AS id_parcelle, cp.numero AS numero_parcelle, cp.surface AS surface_parcelle,cp.nombre_pieds AS nombre_pieds, cvt.id AS id_variete_the, cvt.nom AS nom_variete_the, cvt.occupation AS occupation_the, cvt.rendement AS rendement_par_mois
     FROM culthe_parcelle 
     AS cp 
     JOIN culthe_variete_the 
@@ -200,7 +203,7 @@ CREATE OR REPLACE VIEW v_culthe_somme_poids_cueilli_par_mois AS
     GROUP BY culthe_cueillette.id_parcelle,YEAR(date_cueillette),MONTH(date_cueillette);
 
 CREATE OR REPLACE VIEW v_culthe_parcelle_restant AS 
-    SELECT vip.id_parcelle AS id_parcelle, vip.numero_parcelle AS numero_parcell, vcs.year AS year,vcs.month AS month,vcs.somme AS somme,vip.rendement_par_mois-vcs.somme AS restant
+    SELECT vip.id_parcelle AS id_parcelle, vip.numero_parcelle AS numero_parcelle, vcs.year AS year,vcs.month AS month,vcs.somme AS somme,vip.nombre_pieds-vcs.somme AS restant
     FROM v_culthe_info_parcelle
     AS vip
     JOIN v_culthe_somme_poids_cueilli_par_mois 
