@@ -28,6 +28,7 @@
     function insert_cueillette($id_cueilleur,$id_parcelle,$date_cueillette,$poids_cueilli){
         $request = "INSERT INTO culthe_cueillette VALUES(NULL,%s,%s,'%s',%s)";
         $request = sprintf($request,$id_cueilleur,$id_parcelle,$date_cueillette,$poids_cueilli);
+        echo $request;
         mysqli_query(dbconnect(),$request);
     }
 

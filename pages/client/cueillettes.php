@@ -41,7 +41,7 @@
                      <div class="form__input vertical">
                         <label for="field" class="form__label">Cueilleurs:</label>
 
-                        <select name="cueilleur" id="field" class="form__input-field">
+                        <select name="cueilleur" id="cueilleur" class="form__input-field">
                             <?php foreach( $cueilleurs as &$value ) { ?>     
                                 <option value="<?php echo $value['id_cueilleur']; ?>"><?php echo $value['nom_cueilleur']; ?></option>
                             <?php } ?>
@@ -51,7 +51,7 @@
                     <div class="form__input vertical">
                         <label for="date_harvest" class="form__label">Date de ceuillette:</label>
 
-                        <input type="date" name="date_cueillete" id="date_harvest" class="form__input-field" />
+                        <input type="date" name="date_cueillete" id="date_cueillete" class="form__input-field" />
                     </div>
 
                     <div class="form__input vertical">
@@ -59,16 +59,16 @@
 
                         <select name="parcelle" id="parcelle" class="form__input-field">
                             <?php foreach( $parcelles as &$value ) { ?>     
-                                <option value="<?php echo $value['numero_parcelle']; ?>"><?php echo $value['numero_parcelle']; ?></option>
+                                <option value="<?php echo $value['id_parcelle']; ?>"><?php echo $value['numero_parcelle']; ?></option>
                             <?php } ?>
                         </select>
-                    </div>
+                    </div>  
 
                     <div class="form__input vertical">
                         <label for="weight_harvest" class="form__label">Poids cueilli:</label>
 
                         <div>
-                            <input type="number" name="poids" id="weight_harvest" class="form__input-field" />
+                            <input type="number" name="poids" id="poids" class="form__input-field" />
                             <span class="form__input-field unit">Kg</span>
                         </div>
                     </div>

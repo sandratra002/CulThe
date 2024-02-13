@@ -10,12 +10,17 @@
         $cueilleur = $_POST['cueilleur'];
         $date_cueillete = $_POST['date_cueillete'];
         $poids = $_POST['poids'];
-        insert_cueillette($cueilleur,$parcel,$date_cueillete,$poids);
-        echo("insertion successful :) ");
-        header("Location: ../../pages/client/main.php?page=cueillettes");
+        try {
+            insert_cueillette($cueilleur,$parcel,$date_cueillete,$poids);
+            echo("insertion successful :) ");
+        } catch (\Throwable $th) {
+            echo ("An error has occured :( ");
+            echo $th->getMessage();
+        }
+        // header("Location: ../../pages/client/main.php?page=cueillettes");
     }
     else{
         echo ("An error has occured :( ");
-        header("Location: ../../pages/client/main.php?page=cueillettes");
+        // header("Location: ../../pages/client/main.php?page=cueillettes");
     }
 ?>
