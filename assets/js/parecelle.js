@@ -29,7 +29,7 @@ const edit = (info, index) => {
 
         let obj = {"numero" : inputField.value, "surface" : occupation.value, "variete" : tea.value};
 
-        let url = `http://localhost/FinalProject/handler/admin/parcelle_handler.php?mode=u`;
+        let url = `../../handler/admin/parcelle_handler.php?mode=u`;
         ajax("POST", url, formData)
             .then((data) => {
                 console.log(data)
@@ -49,7 +49,7 @@ const edit = (info, index) => {
 const remove = (info, index) => {
     let formData = new FormData();
     formData.append("id", info["id"]);
-    let url = `http://localhost/FinalProject/handler/admin/parcelle_handler.php?mode=d`;
+    let url = `../../handler/admin/parcelle_handler.php?mode=d`;
     ajax("POST", url, formData)
         .then((data) => {
             console.log(data)

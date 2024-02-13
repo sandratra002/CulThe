@@ -31,7 +31,7 @@ const edit = (info, index) => {
         let obj = {"nom" : inputField.value, "genre" : genre[genreField.value-1] , "birthday" : birthDateField.value};
         console.log(obj);
 
-        let url = `http://localhost/FinalProject/handler/admin/cueilleur_handler.php?mode=u`;
+        let url = `../../handler/admin/cueilleur_handler.php?mode=u`;
         ajax("POST", url, formData)
             .then((data) => {
                 console.log(data)
@@ -51,7 +51,7 @@ const edit = (info, index) => {
 const remove = (info, index) => {
     let formData = new FormData();
     formData.append("id", info["id"]);
-    let url = `http://localhost/FinalProject/handler/admin/cueilleur_handler.php?mode=d`;
+    let url = `../../handler/admin/cueilleur_handler.php?mode=d`;
     ajax("POST", url, formData)
         .then((data) => {
             console.log(data)

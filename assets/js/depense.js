@@ -16,7 +16,7 @@ const edit = (info, index) => {
         let formData = new FormData();
         formData.append("id", info["id"]);
         formData.append("libelle", inputField.value);
-        let url = `http://localhost/FinalProject/handler/admin/depense_handler.php?mode=u`;
+        let url = `../../handler/admin/depense_handler.php?mode=u`;
         ajax("POST", url, formData)
             .then((data) => {
                 console.log(data)
@@ -34,7 +34,7 @@ const edit = (info, index) => {
 const remove = (info, index) => {
     let formData = new FormData();
     formData.append("id", info["id"]);
-    let url = `http://localhost/FinalProject/handler/admin/depense_handler.php?mode=d`;
+    let url = `../../handler/admin/depense_handler.php?mode=d`;
     ajax("POST", url, formData)
         .then((data) => {
             console.log(data)
