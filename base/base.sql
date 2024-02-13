@@ -126,7 +126,7 @@ CREATE TABLE culthe_cueillette(
     id INT PRIMARY KEY AUTO_INCREMENT,
     id_cueilleur INT NOT NULL, 
     id_parcelle INT NOT NULL, 
-    date_cueillette DATETIME NOT NULL, 
+    date_cueillette DATE NOT NULL, 
     poids_cueilli DECIMAL NOT NULL, 
     FOREIGN KEY(id_cueilleur) REFERENCES culthe_cueilleur(id),
     FOREIGN KEY(id_parcelle) REFERENCES culthe_parcelle(id)
@@ -141,8 +141,18 @@ CREATE TABLE culthe_salaire(
     montant DECIMAL(18,2) NOT NULL
 )Engine=InnoDb;
 
+
 INSERT INTO culthe_salaire VALUES
     (NULL,1,100000);
+
+ALTER TABLE culthe_cueilleur ADD  poids_minimal DECIMAL(10,2) NOT NULL; 
+ALTER TABLE culthe_cueilleur ADD  bonus DECIMAL(10,2) NOT NULL; 
+ALTER TABLE culthe_cueilleur ADD  malus DECIMAL(10,2) NOT NULL; 
+ALTER TABLE culthe_cueilleur ADD CONSTRAINT CHECK(poids_minimal >=0 AND bonus > 0 AND malus > 0);
+
+ALTER TABLE culthe_variete_the ADD prix_vente DECIMAL(18,2) NOT NULL DEFAULT 0;
+ALTER TABLE culthe_variete_the ADD CONSTRAINT CHECK(prix_vente >= 0);
+
 
 CREATE OR REPLACE VIEW v_culthe_info_user AS
     SELECT c_u.id AS id, c_u.username AS username, c_t.id AS id_type, c_t.libelle AS libelle
@@ -153,13 +163,13 @@ CREATE OR REPLACE VIEW v_culthe_info_user AS
     ON c_u.id_type = c_t.id
 ;
 
-CREATE OR REPLACE VIEW v_culthe_info_cueilleur AS 
-    SELECT cc.id AS id_cueilleur, cc.nom AS nom_cueilleur, cc.date_naissance AS date_naissance , cg.libelle AS genre
-    FROM culthe_cueilleur 
-    AS cc 
-    JOIN culthe_genre
-    AS cg 
-    ON cc.id_genre=cg.id;
+    CREATE OR REPLACE VIEW v_culthe_info_cueilleur AS 
+        SELECT cc.* ,cg.libelle
+        FROM culthe_cueilleur 
+        AS cc 
+        JOIN culthe_genre
+        AS cg 
+        ON cc.id_genre=cg.id;
 
 CREATE OR REPLACE VIEW v_culthe_info_parcelle AS 
     SELECT cp.id AS id_parcelle, cp.numero AS numero_parcelle, cp.surface AS surface_parcelle,cp.nombre_pieds AS nombre_pieds, cvt.id AS id_variete_the, cvt.nom AS nom_variete_the, cvt.occupation AS occupation_the, cvt.rendement AS rendement_par_mois
@@ -221,3 +231,19 @@ CREATE OR REPLACE VIEW v_culthe_info_cueillette_prix AS
     SELECT culthe_cueillette.id_parcelle as id_parcelle,culthe_cueillette.date_cueillette as date_cueillette,v_culthe_info_salaire.montant AS montant
     FROM culthe_cueillette,v_culthe_info_salaire
 ;
+
+CREATE OR REPLACE VIEW v_culthe_paiement_cueilleur AS 
+    SELECT cc.id,cic.date_cueillette,cc.nom,cc.bonus,cc.malus,cc.poids_minimal,sum(cic.poids_cueilli) as poids_cueilli,sum(cs.montant) as montant
+    FROM culthe_cueilleur
+    AS cc 
+    JOIN v_culthe_info_salaire
+    AS cis
+    ON cc.id=cis.id_cueilleur
+    JOIN culthe_cueillette 
+    AS cic 
+    ON cis.id_cueilleur=cic.id_cueilleur
+    JOIN culthe_salaire
+    AS cs 
+    ON cic.id_cueilleur=cs.id_cueilleur
+    GROUP BY cc.id,cic.date_cueillette
+    ;

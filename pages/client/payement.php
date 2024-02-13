@@ -53,3 +53,5 @@
             </form>
         </section>
     </div>
+
+<script src="../../assets/js/payement.js"></script>
