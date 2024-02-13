@@ -23,9 +23,14 @@
     }
     
     function delete_variete_the_by_id($id){
-        $request = "DELETE FROM culthe_variete_the WHERE id=%s CASCADE";
+        $chk = "SET foreign_key_checks = 0";
+        mysqli_query(dbconnect(),$chk);
+        $request = "DELETE FROM culthe_variete_the WHERE id=%s";
         $request = sprintf($request,$id);
         echo $request;
         mysqli_query(dbconnect(),$request);
+        $chk = "SET foreign_key_checks = 1";
+        mysqli_query(dbconnect(),$chk);
+        echo "delete fait";
     }
 ?>
