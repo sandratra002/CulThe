@@ -6,7 +6,7 @@
     $poidTotal = get_total_poids_cueilli($debut , $fin);
     $restant = get_restant_par_parcelle($fin);
     $coutRevient = get_prix_revient_par_kilo($debut , $fin);
-    $montant_vente = get_montant_vente();
+    //$montant_vente = get_montant_vente();
 
     $resutlat = array(
         "poidsTotal" => $poidTotal , 
