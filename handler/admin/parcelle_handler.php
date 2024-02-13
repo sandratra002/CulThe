@@ -1,8 +1,5 @@
 <?php
     require("../../inc/functions.php");
-    if(!isset($_SESSION['user']) || $_SESSION['user']['id_type'] != 1){
-        header("Location: ../../pages/admin/index.php");
-    }
     $mode = null;
     if(isset($_GET['mode'])){
         $mode = $_GET['mode'];
@@ -20,11 +17,11 @@
         $surface = $_POST["surface"];
         $variete = $_POST["variete"];
         update_parcelle($id,$numero,$surface, $variete);
-        echo ("Update succesful");
+        echo ("Update successful");
     }else if($mode == "d"){
         $id = $_POST["id"];
         delete_parcelle_by_id($id);
-        echo ("Delete succesful");
+        echo ("Delete successful");
     }
     else{
         echo ("An error has occured :( ");

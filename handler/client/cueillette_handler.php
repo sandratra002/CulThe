@@ -1,14 +1,11 @@
 <?php
     session_start();
     require("../../inc/functions.php");
-    if(!isset($_SESSION['user'])){
-        header("Location: ../../pages/client/index.php");
-    }
     $mode = null;
     if(isset($_GET['mode'])){
         $mode = $_GET['mode'];
     }
-    if(isset($_POST['parcelle']) && isset($_POST['cueilleur']) && isset($_POST['date_cueillete']) && isset($_POST['poids']) && $mode == null){
+    if(isset($_POST['parcelle']) && isset($_POST['cueilleur']) && isset($_POST['date_cueillette']) && isset($_POST['poids']) && $mode == null){
         $parcel = $_POST['parcelle'];
         $cueilleur = $_POST['cueilleur'];
         $date_cueillete = $_POST['date_cueillete'];

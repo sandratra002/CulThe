@@ -1,8 +1,5 @@
 <?php
     require("../../inc/functions.php");
-    if(!isset($_SESSION['user']) || $_SESSION['user']['id_type'] != 1){
-        header("Location: ../../pages/admin/index.php");
-    }
     $months = array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
     $selectedMonth = array();
     $mode = null;
@@ -29,11 +26,11 @@
         $occupation = $_POST['occupation'];
         $rendement = $_POST['rendement'];
         update_variete_the($id,$nom,$occupation, $rendement);
-        echo ("Update succesful");
+        echo ("Update successful");
     }else if($mode == "d"){
         $id = $_POST["id"];
         delete_variete_the_by_id($id);
-        echo ("Delete succesful");
+        echo ("Delete successful");
     }
     else{
         echo ("An error has occured :( ");

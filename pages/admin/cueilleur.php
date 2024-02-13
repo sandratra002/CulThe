@@ -52,7 +52,7 @@
                     <div class="form__input-group horizontal">
                         <div class="form__input vertical">
                             <label for="birthday" class="form__label">Date de naissance:</label>
-                            <input type="date" name="birthday" id="birthday" class="form__input-field" value="2023-02-13"/>
+                            <input type="date" name="birthday" id="birthday" class="form__input-field" value="2023-01-01"/>
                         </div>
                     </div>
                     <div class="form__input-group horizontal">

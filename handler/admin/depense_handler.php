@@ -1,8 +1,5 @@
 <?php
     require("../../inc/functions.php");
-    if(!isset($_SESSION['user']) || $_SESSION['user']['id_type'] != 1){
-        header("Location: ../../pages/admin/index.php");
-    }
     $mode = null;
     if(isset($_GET['mode'])){
         $mode = $_GET['mode'];

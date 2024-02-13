@@ -51,7 +51,7 @@
                     <div class="form__input vertical">
                         <label for="date_harvest" class="form__label">Date de ceuillette:</label>
 
-                        <input type="date" name="date_cueillete" id="date_cueillete" class="form__input-field" />
+                        <input type="date" name="date_cueillete" id="date_cueillette" class="form__input-field" value="2023-01-01"/>
                     </div>
 
                     <div class="form__input vertical">
