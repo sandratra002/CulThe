@@ -177,7 +177,7 @@ CREATE OR REPLACE VIEW v_culthe_info_salaire AS
     ON cc.id_genre=cg.id;
 
 CREATE OR REPLACE VIEW v_culthe_info_depense AS 
-    SELECT cd.*,ccd.libelle AS id_categorie_depense 
+    SELECT cd.*,ccd.libelle AS categorie_depense 
     FROM culthe_depense 
     AS cd 
     JOIN culthe_categorie_depense 
