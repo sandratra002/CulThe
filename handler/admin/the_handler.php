@@ -17,7 +17,7 @@
                 $selectedMonth[] = $months[$i];
            }
         }
-        insert_variete_the($nom,$occupation,$rendement , $prixVente);
+        insert_variete_the($nom,$occupation,$rendement ,$prixVente);
         header("Location: ../../pages/admin/main.php?page=the");
         echo("insertion successful :) ");
     }else if($mode == "u"){
