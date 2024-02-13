@@ -10,7 +10,7 @@ window.onload = () => {
         formData.append("date_debut", dateDebut);
         formData.append("date_fin", dateFin);
 
-        let url = "../../handler/client/resultat_handler.php";  
+        let url = "../../handler/client/payement_handler.php";  
         let method = "POST";
 
         ajax(method, url, formData)

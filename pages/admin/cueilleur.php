@@ -16,6 +16,9 @@
                         <th class="name">Nom</th>
                         <th class="date">Date de naissance</th>
                         <th class="money">Genre</th>
+                        <th class="money">Poids minimal</th>
+                        <th class="money">Bonus</th>
+                        <th class="money">Mallus</th>
                         <th class="money">Action</th>
                     </tr>
                 <?php for($i=0; $i<count($list_cueilleur); $i++){ ?>
@@ -24,6 +27,9 @@
                         <td class="name"><?php echo($list_cueilleur[$i]['nom_cueilleur']); ?></td>
                         <td class="date"><?php echo($list_cueilleur[$i]['date_naissance']); ?></td>
                         <td class="gender"><?php echo($list_cueilleur[$i]['genre']); ?></td>
+                        <td class="gender"><?php echo($list_cueilleur[$i]['poids_minimal']); ?></td>
+                        <td class="gender"><?php echo($list_cueilleur[$i]['bonus']); ?></td>
+                        <td class="gender"><?php echo($list_cueilleur[$i]['mallus']); ?></td>
                         <td>
                             <a href="#" class="edit-btn"><i class="fa fa-edit"></i></a>
                             <a href="#" class="delete-btn"><i class="fa fa-trash"></i></a>
@@ -66,11 +72,11 @@
                     <div class="form__input-group horizontal">
                         <div class="form__input vertical">
                             <label for="birthday" class="form__label">Bonus superieur:</label>
-                            <input type="bonus_superieur" name="bonus_superieur" id="birthday" class="form__input-field" value="2023-02-13"/>
+                            <input type="bonus_superieur" name="bonus_superieur" id="birthday" class="form__input-field" value="0"/>
                         </div>
                         <div class="form__input vertical">
                             <label for="birthday" class="form__label">Bonus Inferieur : </label>
-                            <input type="bonus_inferieur" name="bonus_inferieur" id="birthday" class="form__input-field" value="2023-02-13"/>
+                            <input type="bonus_inferieur" name="bonus_inferieur" id="birthday" class="form__input-field" value="0"/>
                         </div>
                     </div>
                 </div>
