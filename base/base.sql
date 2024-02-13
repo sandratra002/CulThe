@@ -198,7 +198,7 @@ CREATE OR REPLACE VIEW v_culthe_somme_poids_cueilli_par_mois AS
     FROM culthe_cueillette 
     GROUP BY culthe_cueillette.id_parcelle,YEAR(date_cueillette),MONTH(date_cueillette);
 
-CREATE OR REPLACE VIEW v_culthe_parcel_restant AS 
+CREATE OR REPLACE VIEW v_culthe_parcelle_restant AS 
     SELECT vip.id_parcelle AS id_parcelle, vip.numero_parcelle AS numero_parcell, vcs.year AS year,vcs.month AS month,vcs.somme AS somme,vip.rendement_par_mois-vcs.somme AS restant
     FROM v_culthe_info_parcelle
     AS vip

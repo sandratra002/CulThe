@@ -8,6 +8,6 @@
     require("admin/function_categorie_depense.php");
     require("admin/function_salaire.php");
 
-    $cue = get_all_cueillette();
+    $cue = get_restant_parcelle_par_date("2024-2-1",2);
     var_dump($cue);
 ?>
