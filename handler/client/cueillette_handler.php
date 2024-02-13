@@ -7,7 +7,7 @@
         $poids = $_POST['poids'];
         insert_cueillette($cueilleur,$parcel,$date_cueillete,$poids);
         echo("insertion successful :) ");
-        //header("Location: ../../pages/admin/main.php?page=parcelle");
+        header("Location: ../../pages/client/main.php?page=cueillette");
     }
     else{
         echo ("An error has occured :( ");
