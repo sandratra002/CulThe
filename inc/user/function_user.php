@@ -2,7 +2,6 @@
     function get_user_by_id($id){
         $request = "SELECT * FROM v_culthe_info_user WHERE id= %s";
         $request = sprintf($request,$id);
-        echo $request;
         $temp = mysqli_query(dbconnect(),$request);
         $result = null;
         if(mysqli_num_rows($temp) == 0){
@@ -28,8 +27,10 @@
     function insert_cueillette($id_cueilleur,$id_parcelle,$date_cueillette,$poids_cueilli){
         $request = "INSERT INTO culthe_cueillette VALUES(NULL,%s,%s,'%s',%s)";
         $request = sprintf($request,$id_cueilleur,$id_parcelle,$date_cueillette,$poids_cueilli);
-        echo $request;
         mysqli_query(dbconnect(),$request);
+        $request1 = "UPDATE culthe_parcelle SET nombre_pieds=nombre_pieds-%s";
+        $request1 = sprintf($request1,$poids_cueilli);
+        mysqli_query(dbconnect(),$request1);
     }
 
     function get_all_cueillette(){
