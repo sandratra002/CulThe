@@ -45,6 +45,10 @@ INSERT INTO culthe_variete_the VALUES
     (NULL,'Thé blanc Shou Mei', 5.25, 10.80),
     (NULL,'Thé pu-erh Shou', 5.25, 10.20);
 
+INSERT INTO culthe_variete_the VALUES 
+    (NULL,'Thé pu-erh Shou', 5.25, 10.20,20000)
+    ;
+
 CREATE TABLE culthe_parcelle(
     id INT PRIMARY KEY AUTO_INCREMENT,
     numero INT NOT NULL, 
@@ -67,6 +71,7 @@ INSERT INTO culthe_parcelle VALUES
     (NULL,8, 5,9523, 6),
     (NULL,9, 3,5714, 8),
     (NULL,10, 2,3809, 10);
+
 
 CREATE TABLE culthe_genre(
     id INT PRIMARY KEY AUTO_INCREMENT, 
@@ -255,3 +260,14 @@ CREATE OR REPLACE VIEW v_culthe_montant_vente AS
     JOIN culthe_variete_the 
     AS cvt 
     ON cp.id_variete_the=cvt.id;
+
+    SELECT c.numero_parcelle,i.date_cueillette,c.restant,i.somme,p.montant,v.prix_vente
+    FROM v_culthe_parcelle_restant as c
+    JOIN v_culthe_info_cueillette as i
+    JOIN v_culthe_info_cueillette_prix as p
+    JOIN v_culthe_montant_vente as v
+    GROUP BY c.numero_parcelle,i.date_cueillette,c.restant,i.somme,p.montant,v.prix_vente
+    ;
+    
+    
+    v_culthe_info_depense,v_culthe_info_cueillette_prix;
