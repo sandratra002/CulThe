@@ -23,8 +23,13 @@
     }
     
     function delete_variete_the_by_id($id){
+        $chk = "SET foreign_key_checks = 0";
+        mysqli_query(dbconnect(),$chk);
         $request = "DELETE FROM culthe_variete_the WHERE id=%s";
         $request = sprintf($request,$id);
         mysqli_query(dbconnect(),$request);
+        $chk = "SET foreign_key_checks = 1";
+        mysqli_query(dbconnect(),$chk);
+        echo "delete fait";
     }
 ?>

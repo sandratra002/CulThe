@@ -21,7 +21,9 @@ CREATE TABLE culthe_user(
 )Engine=InnoDb;
 
 INSERT INTO culthe_user VALUE 
-    (NULL,'admin',sha1('admin'),1);
+    (NULL,'admin',sha1('admin'),1),
+    (NULL,'client',sha1('client'),2)
+;
 
 CREATE TABLE culthe_variete_the(
     id INT PRIMARY KEY AUTO_INCREMENT,
