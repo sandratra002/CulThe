@@ -1,6 +1,7 @@
 <?php
+    session_start();
     require("../../inc/functions.php");
-    if(!isset($_SESSION['user']) || $_SESSION['user']['id_type'] != 2){
+    if(!isset($_SESSION['user'])){
         header("Location: ../../pages/client/index.php");
     }
     $mode = null;
@@ -17,7 +18,7 @@
             // header("Location: ../../pages/client/main.php?page=cueillettes");
             echo("insertion successful :) ");
         } catch (\Throwable $th) {
-            echo ("An error has occured :( ");
+            echo ("An error :( ");
             echo $th->getMessage();
         }
         // header("Location: ../../pages/client/main.php?page=cueillettes");
