@@ -9,6 +9,7 @@
 <style>
     body{
         overflow: hidden;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     }
     .container{
         overflow: hidden;
@@ -22,12 +23,26 @@
     }
 
     a{
-        width: 100px;
-        height: 100px;
+        width: 200px;
+        height: 200px;
 
         font-size: 2rem;
         text-decoration: none;
-        color : black;
+        color : white;
+        border-radius: 10px;
+
+        background: #4d902c;
+        box-shadow: 0px 0px 5px 0px black;
+
+        display : flex;
+        justify-content: center;
+        align-items: center;
+
+        transition: .5s;
+    }
+
+    a:hover{
+        box-shadow: 0px 0px 10px 0px black;
     }
 </style>
 <body>
