@@ -32,7 +32,7 @@
         </section>
 
         <section class="right">
-            <form action="../../handler/client/resultat_handler.php" method="post" id="login-form" class="form">
+            <form id="login-form" class="form">
                 <h1 class="form__title">Check Historique</h1>
 
                 <hr class="form__sep">
@@ -52,7 +52,10 @@
                     </div>
                 </div>
 
-                <input type="submit" value="Check" class="form__submit btn" id="form__submit-btn" />
+                <!-- <input type="submit" value="Check" class="form__submit btn" id="form__submit-btn" /> -->
+                <button class="form__submit btn" id="form__submit-btn">Submit</button>
             </form>
         </section>
     </div>
+
+<script src="../../assets/js/resultat.js"></script>

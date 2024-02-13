@@ -1,12 +1,14 @@
 window.onload = () => {
     let btn = document.getElementById("form__submit-btn");
-    btn.onclick = () => {
+    btn.onclick = (e) => {
+        e.preventDefault();
+
         let dateDebut = document.getElementById("date_debut").value;
         let dateFin = document.getElementById("date_fin").value;
 
         let formData = new FormData();
         formData.append("date_debut", dateDebut);
-        formData.append("date_fin", dateDebut);
+        formData.append("date_fin", dateFin);
 
         let url = "../../handler/client/resultat_handler.php";  
         let method = "POST";
@@ -14,26 +16,30 @@ window.onload = () => {
         ajax(method, url, formData)
             .then((data) =>{
                 popup(data, "popup success");
-                let table = document.getElementById("table");
-                removeTableBodyRows("table");
-                let tBody = document.createElement("tbody");
-                table.appendChild(tBody);
-                let jsonData = JSON.parse(data);
-                for(const data of jsonData){
-                    let tr = document.createElement("tr");
-                    tr.innerHTML = `
-                        <tr>${data}</tr>
-                        <tr>${data}</tr>
-                        <tr>${data}</tr>
-                        <tr>${data}</tr>
-                        <tr>${data}</tr>
-                        <tr>${data}</tr>
-                    `;
-                    tBody.appendChild(tr);
-                }
+                createTableData(data);
             })
             .catch((err) =>{
                 popup(err, "popup error");
             });
     };
+};
+
+const createTableData = (data) => {
+    let table = document.getElementById("table");
+    removeTableBodyRows("table");
+    let tBody = document.createElement("tbody");
+    table.appendChild(tBody);
+    let jsonData = JSON.parse(data);
+    for(const data of jsonData){
+        let tr = document.createElement("tr");
+        tr.innerHTML = `
+            <tr>${data}</tr>
+            <tr>${data}</tr>
+            <tr>${data}</tr>
+            <tr>${data}</tr>
+            <tr>${data}</tr>
+            <tr>${data}</tr>
+        `;
+        tBody.appendChild(tr);
+    }
 };
