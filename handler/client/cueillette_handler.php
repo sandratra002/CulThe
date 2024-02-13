@@ -3,7 +3,6 @@
     if(!isset($_SESSION['user']) || $_SESSION['user']['id_type'] != 2){
         header("Location: ../../pages/client/index.php");
     }
-    var_dump($_POST);
     $mode = null;
     if(isset($_GET['mode'])){
         $mode = $_GET['mode'];
