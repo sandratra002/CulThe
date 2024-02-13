@@ -146,7 +146,7 @@ CREATE OR REPLACE VIEW v_culthe_info_user AS
     AS c_u
     JOIN culthe_type_user
     AS c_t
-    ON c_u.id = c_t.id
+    ON c_u.id_type = c_t.id
 ;
 
 CREATE OR REPLACE VIEW v_culthe_info_cueilleur AS 

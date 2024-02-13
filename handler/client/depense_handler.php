@@ -4,9 +4,9 @@
         $categorie = $_POST['categorie'];
         $montant = $_POST['montant'];
         $date_depense = $_POST['date_depense'];
-        insert_depense($categorie,$montant,$date_depense,$date_depense);
+        insert_depense($categorie,$montant,$date_depense);
         echo("insertion successful :) ");
-        //header("Location: ../../pages/admin/main.php?page=categoriele");
+        header("Location: ../../pages/client/main.php?page=depenses");
     }
     else{
         echo ("An error has occured :( ");

@@ -14,8 +14,8 @@
                 unset($_SESSION['error']);
             }
             $_SESSION['user'] = get_user_by_id($login['id']);
-            
-            //$header .= "../../pages/client/main.php";
+            // var_dump($_SESSION['user']);
+            $header .= "../../pages/client/main.php";
         }
     }else{
         $_SESSION['error'] = "Please fill up all fields"; 

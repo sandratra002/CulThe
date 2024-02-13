@@ -1,7 +1,7 @@
 <?php
     require("../../inc/functions.php");
     session_start();
-    $include = "default.php";
+    $include = "resultat.php";
     if(isset($_GET["page"])){
         $include = "../client/" . $_GET["page"] . ".php";
     }
