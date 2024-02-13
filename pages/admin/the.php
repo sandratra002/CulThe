@@ -15,6 +15,7 @@
                         <th class="name">Nom</th>
                         <th class="occupation">Occupation</th>
                         <th class="rendement">Rendement</th>
+                        <th class="rendement">Prix de vente</th>
                         <th>Action</th>
                     </tr>
                     <?php for($i=0; $i<count($list_variete_the); $i++){ ?>
@@ -22,6 +23,7 @@
                         <td class="id number"><?php echo($list_variete_the[$i]['id']); ?></td>
                         <td class="surface"><?php echo($list_variete_the[$i]['nom']); ?></td>
                         <td class="name"><?php echo($list_variete_the[$i]['occupation']); ?></td>
+                        <td class="rendement"><?php echo($list_variete_the[$i]['rendement']); ?></td>
                         <td class="rendement"><?php echo($list_variete_the[$i]['rendement']); ?></td>
                         <td>
                             <a href="#" class="edit-btn"><i class="fa fa-edit"></i></a>
@@ -38,11 +40,20 @@
                 <h1 class="form__title">Gestion de cultures</h1>
                 <hr class="form__sep">
                 <div class="form__content">
-                    <div class="form__input vertical">
-                        <label for="nom" class="form__label">Nom : </label>
-                        <div>
-                            <input type="text" name="nom" id="nom" class="form__input-field" />
-                            <!-- <span class="form__input-field unit">m<sup>2</sup></span> -->
+                    <div class="form__input horizontal">
+                        <div class="form__input vertical">
+                            <label for="nom" class="form__label">Nom : </label>
+                            <div>
+                                <input type="text" name="nom" id="nom" class="form__input-field" />
+                                <!-- <span class="form__input-field unit">m<sup>2</sup></span> -->
+                            </div>
+                        </div>
+                        <div class="form__input vertical">
+                                <label for="prix_vente" class="form__label">Prix de Vente:</label>
+                                <div>
+                                    <input type="number" name="prix_vente" id="prix_vente" class="form__input-field" />
+                                    <span class="form__input-field unit">Ar</span>
+                                </div>
                         </div>
                     </div>
                     <div class="form__input vertical">
@@ -52,15 +63,15 @@
                             <span class="form__input-field unit">m<sup>2</sup></span>
                         </div>
                     </div>
-
-                    <div class="form__input vertical">
-                        <label for="rendement" class="form__label">Rendement:</label>
-                        <div>
-                            <input type="number" name="rendement" id="rendement" class="form__input-field" />
-                            <span class="form__input-field unit">Kg/mois</span>
+                    <div class="form__input horizontal">
+                        <div class="form__input vertical">
+                            <label for="rendement" class="form__label">Rendement:</label>
+                            <div>
+                                <input type="number" name="rendement" id="rendement" class="form__input-field" />
+                                <span class="form__input-field unit">Kg/mois</span>
+                            </div>
                         </div>
                     </div>
-
                     <div class="form__input horizontal">
                         <?php for($i = 0; $i < 6; $i++){ ?>
                             <input type="checkbox" name="<?php echo strtolower($months[$i]); ?>" id="<?php echo strtolower($months[$i]); ?>" class="form__input-field" />

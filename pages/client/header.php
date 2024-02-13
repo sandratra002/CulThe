@@ -7,6 +7,7 @@
                     <li class="nav__item"><a href="main.php?page=resultat">Home</a></li>
                     <li class="nav__item"><a href="main.php?page=cueillettes">Cueillettes</a></li>
                     <li class="nav__item"><a href="main.php?page=depenses">Depenses</a></li>
+                    <li class="nav__item"><a href="main.php?page=payement">Payement</a></li>
                 </ul>
             </nav>
             

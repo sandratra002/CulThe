@@ -7,21 +7,21 @@
             <div class="section__content">
                 <table id="table">
                     <tr>
-                        <th class="id number">Poids total cueillette</th>
-                        <th class="id number">Poids parcelles</th>
-                        <th class="id number">Montant ventes</th>
-                        <th class="id number">Montant depense</th>
-                        <th class="id number">Benefice</th>
-                        <th class="date">Cout de revient</th>
+                        <th class="id number">Date</th>
+                        <th class="date">Nom</th>
+                        <th class="id number">Poids</th>
+                        <th class="date">Bonus</th>
+                        <th class="date">Mallus</th>
+                        <th class="date">Montant Payement</th>
                     </tr>
 
                     <tr>
-                        <td class="id number">100kg</td>
+                        <td class="id number">2023-12-02</td>
+                        <td class="name">Sandratra</td>
                         <td class="id number">50kg</td>
-                        <td class="id number">30000</td>
-                        <td class="id number">20000</td>
-                        <td class="id number">10000</td>
-                        <td class="id number">10000</td>
+                        <td class="id number">2%</td>
+                        <td class="id number">4%</td>
+                        <td class="id number">100000</td>
                     </tr>
 
                 </table>
@@ -30,7 +30,7 @@
 
         <section class="right">
             <form action="" method="post" id="login-form" class="form">
-                <h1 class="form__title">Check Historique</h1>
+                <h1 class="form__title">Check Payement Cuielleurs</h1>
 
                 <hr class="form__sep">
 
