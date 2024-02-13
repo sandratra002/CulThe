@@ -27,6 +27,18 @@ const edit = (info, index) => {
         formData.append("occupation", occupation.value);
         formData.append("rendement", rendement.value);
 
+        let months = [
+            "January", "February", "March", "April", "May", "June",
+            "July", "August", "September", "October", "November", "December"
+        ];
+          
+        for(const month of months){
+            const checkbox = document.getElementById(month.toLocaleLowerCase());
+            if(checkbox.checked){
+                formData.append(month, month);
+            }
+        }
+
         let obj = {"nom" : inputField.value, "occupation" : occupation.value , "rendement" : rendement.value};
 
         let url = `../../handler/admin/the_handler.php?mode=u`;
