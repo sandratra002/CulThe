@@ -12,6 +12,9 @@
         $nom = $_POST['nom'];
         $date_naissance = $_POST['birthday'];
         $genre = $_POST['genre'];
+        $poidMinimal = $_POST['poid_minimal'];
+        $bonusSup = $_POST['bonus_superieur'];
+        $bonusInf = $_POST['bonus_inferieur'];
         insert_cueilleur($nom,$genre,$date_naissance);
         echo("insertion successful :) ");
         header("Location: ../../pages/admin/main.php?page=cueilleur");

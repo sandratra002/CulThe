@@ -2,7 +2,7 @@
     function dbconnect(){
         static $connect = null;
         if ($connect===null) {
-            $connect = mysqli_connect('localhost','Sanda','DashD ashGo2K23!!','culthe');
+            $connect = mysqli_connect('localhost','root','','culthe');
         }
         return $connect;
     }
