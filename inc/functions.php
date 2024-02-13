@@ -7,4 +7,6 @@
     require("admin/function_cueilleur.php");
     require("admin/function_categorie_depense.php");
     require("admin/function_salaire.php");
+
+    get_total_paiement_cueilleur('2023-2-1');
 ?>
