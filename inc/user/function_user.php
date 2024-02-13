@@ -89,26 +89,26 @@
     }
 
     function get_prix_cueillette($dateDebut,$dateFin){
-        $request = "SELECT * FROM v_culthe_info_cueillette_prix WHERE date_cueillette >='%s' AND date_cueillete <='%s'";
+        $request = "SELECT * FROM v_culthe_info_cueillette_prix WHERE date_cueillette >='%s' AND date_cueillette <='%s'";
         $request = sprintf($request,$dateDebut,$dateFin);
         $temp = mysqli_query(dbconnect(),$request);
         $result = array();
-        while($donne = mysqli_fectch_array($temp)){
+        while($donne = mysqli_fetch_array($temp)){
             $result[] = $donne;
         }
-        mysli_free_result($temp);
+        mysqli_free_result($temp);
         return $result;
     }
 
     function get_all_depense_by_date($dateDebut,$dateFin){
-        $request = "SELECT * FROM v_culthe_info_depense WHERE date_cueillette >='%s' AND date_cueillete <='%s'";
+        $request = "SELECT * FROM v_culthe_info_depense WHERE date_depense >='%s' AND date_depense <='%s'";
         $request = sprintf($request,$dateDebut,$dateFin);
         $temp = mysqli_query(dbconnect(),$request);
         $result = array();
-        while($donne = mysqli_fectch_array($temp)){
+        while($donne = mysqli_fetch_array($temp)){
             $result[] = $donne;
         }
-        mysli_free_result($temp);
+        mysqli_free_result($temp);
         return $result;
     }
 
@@ -123,6 +123,7 @@
 
     function get_prix_revient_par_kilo($date_debut,$date_fin){
         $revient = 0;
+        $result = 0;
         $depense = get_all_depense_by_date($date_debut,$date_fin);
         $prix = get_prix_cueillette($date_debut,$date_fin);
         for($i=0; $i<count($depense); $i++){
@@ -132,6 +133,9 @@
             $revient += $prix[$i]['montant'];
         }
         $cueilli = get_total_poids_cueilli($date_debut,$date_fin);
-        return round($revient/$cueilli);
+        if($revient != 0 && $cueilli){
+            $result = round($revient/$cueilli);
+        }
+        return $result;
     }
 ?>
