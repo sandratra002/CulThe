@@ -1,6 +1,10 @@
 <?php
     require("../../inc/functions.php");
+    session_start();
     $mode = null;
+    if(!isset($_SESSION['user']) || $_SESSION['user']['id_type'] != 1){
+        header("Location: ../../pages/admin/index.php");
+    }
     if(isset($_GET['mode'])){
         $mode = $_GET['mode'];
     }
@@ -13,7 +17,7 @@
         header("Location: ../../pages/admin/main.php?page=cueilleur");
     }else if($mode == "u"){
         $nom = $_POST["nom"];
-        $id = $_POST["id"];
+        $id = $_POST["id"]; 
         $birthday = $_POST["birthday"];
         $genre = $_POST["genre"];
         update_cueilleur($id,$nom,$genre, $birthday);

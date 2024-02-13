@@ -1,9 +1,10 @@
 <header id="main-header">
-        <h1 class="header__logo"><a href="">CulThe</a></h1>
+        <h1 class="header__logo"><a href="main.php?page=default">CulThe</a></h1>
 
         <div>
             <nav class="header__nav nav">
                 <ul>
+                    <li class="nav__item"><a href="main.php?page=default">Home</a></li>
                     <li class="nav__item"><a href="main.php?page=the">Cultures</a></li>
                     <li class="nav__item"><a href="main.php?page=parcelle">Parcelles</a></li>
                     <li class="nav__item"><a href="main.php?page=cueilleur">Ceuilleurs</a></li>

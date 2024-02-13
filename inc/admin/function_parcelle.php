@@ -28,7 +28,7 @@
         mysqli_query(dbconnect(),$request);
     }
 
-    function regenerate_all_parcelle(){
-        $request = ""
-    }
+    // function regenerate_all_parcelle(){
+    //     $request = ""
+    // }
 ?>
