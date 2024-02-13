@@ -209,3 +209,16 @@ CREATE OR REPLACE VIEW v_culthe_parcelle_restant AS
     JOIN v_culthe_somme_poids_cueilli_par_mois 
     AS vcs 
     ON vip.id_parcelle = vcs.id_parcelle_cueillette;
+
+CREATE OR REPLACE VIEW v_culthe_info_cueillette AS 
+    SELECT culthe_cueillette.id_parcelle,sum(culthe_cueillette.poids_cueilli) AS somme,culthe_cueillette.date_cueillette
+    FROM culthe_cueillette
+    GROUP BY culthe_cueillette.id_parcelle,culthe_cueillette.date_cueillette
+;
+
+CREATE OR REPLACE VIEW v_culthe_info_cueillette_prix AS 
+    SELECT culthe_cueillette.id_parcelle as id_parcelle,culthe_cueillette.date_cueillette as date_cueillette,v_culthe_info_salaire.montant AS montant
+    FROM culthe_cueillette,v_culthe_info_salaire
+;
+
+SELECT * FROM v_culthe_info_depense;

@@ -20,15 +20,21 @@ const edit = (info, index) => {
         let inputField = document.getElementById("nom");
         let genreField = document.getElementById("tea");
         let birthDateField = document.getElementById("birthday");
+        let poidMinimal = document.getElementById("poid_minimal");
+        let bonusSuperieur = document.getElementById("bonus_superieur");
+        let bonusInferieur = document.getElementById("bonus_inferieur");
 
         let formData = new FormData();
         formData.append("id", info["id"]);
         formData.append("nom", inputField.value);
         formData.append("genre", genreField.value);
         formData.append("birthday", birthDateField.value);
+        formData.append("poid_minimal", poidMinimal.value);
+        formData.append("bonus_superieur", bonusSuperieur.value);
+        formData.append("bonus_inferieur", bonusInferieur.value);
         let genre = ["Homme", "Femme", "N/A"];
 
-        let obj = {"nom" : inputField.value, "genre" : genre[genreField.value-1] , "birthday" : birthDateField.value};
+        let obj = {"nom" : inputField.value, "genre" : genre[genreField.value-1] , "birthday" : birthDateField.value, "poidMinimal" : poidMinimal.value, "bonusSuperieur" : bonusSuperieur.value, "bonusInferieur" : bonusInferieur.value};
         console.log(obj);
 
         let url = `../../handler/admin/cueilleur_handler.php?mode=u`;
@@ -39,6 +45,9 @@ const edit = (info, index) => {
                 updateValue("table", index + 1, "Nom", obj["nom"]);
                 updateValue("table", index + 1, "Genre", obj["genre"]);
                 updateValue("table", index + 1, "Date de naissance", obj["birthday"]);
+                updateValue("table", index + 1, "Poids Minimal", obj["poidMinimal"]);
+                updateValue("table", index + 1, "Bonus Superieur", obj["bonusSuperieur"]);
+                updateValue("table", index + 1, "Bonus Inferieur", obj["bonusInferieur"]);
                 btn.removeEventListener("click", () => {});
             })
             .catch((error) =>{

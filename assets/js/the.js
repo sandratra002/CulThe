@@ -20,12 +20,14 @@ const edit = (info, index) => {
         let inputField = document.getElementById("nom");
         let occupation = document.getElementById("occupation");
         let rendement = document.getElementById("rendement");
+        let prixVente  = document.getElementById("prix_vente");
 
         let formData = new FormData();
         formData.append("id", info["id"]);
         formData.append("nom", inputField.value);
         formData.append("occupation", occupation.value);
         formData.append("rendement", rendement.value);
+        formData.append("prix_vente", prixVente.value);
 
         let months = [
             "January", "February", "March", "April", "May", "June",
@@ -39,7 +41,7 @@ const edit = (info, index) => {
             }
         }
 
-        let obj = {"nom" : inputField.value, "occupation" : occupation.value , "rendement" : rendement.value};
+        let obj = {"nom" : inputField.value, "occupation" : occupation.value , "rendement" : rendement.value, "prixVente" :  prixVente.value};
 
         let url = `../../handler/admin/the_handler.php?mode=u`;
         ajax("POST", url, formData)
@@ -49,6 +51,7 @@ const edit = (info, index) => {
                 updateValue("table", index + 1, "Nom", obj["nom"]);
                 updateValue("table", index + 1, "Occupation", obj["occupation"]);
                 updateValue("table", index + 1, "Rendement", obj["rendement"]);
+                updateValue("table", index + 1, "Prix Vente", obj["prixVente"]);
                 btn.removeEventListener("click", () => {});
             })
             .catch((error) =>{
