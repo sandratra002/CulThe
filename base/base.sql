@@ -126,7 +126,7 @@ CREATE TABLE culthe_cueillette(
     id INT PRIMARY KEY AUTO_INCREMENT,
     id_cueilleur INT NOT NULL, 
     id_parcelle INT NOT NULL, 
-    date_cueillette DATETIME NOT NULL, 
+    date_cueillette DATE NOT NULL, 
     poids_cueilli DECIMAL NOT NULL, 
     FOREIGN KEY(id_cueilleur) REFERENCES culthe_cueilleur(id),
     FOREIGN KEY(id_parcelle) REFERENCES culthe_parcelle(id)
