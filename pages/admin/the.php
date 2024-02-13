@@ -40,21 +40,19 @@
                 <h1 class="form__title">Gestion de cultures</h1>
                 <hr class="form__sep">
                 <div class="form__content">
-                    <div class="form__input horizontal">
-                        <div class="form__input vertical">
-                            <label for="nom" class="form__label">Nom : </label>
+                    <div class="form__input vertical">
+                        <label for="nom" class="form__label">Nom : </label>
+                        <div>
+                            <input type="text" name="nom" id="nom" class="form__input-field" />
+                            <!-- <span class="form__input-field unit">m<sup>2</sup></span> -->
+                        </div>
+                    </div>
+                    <div class="form__input vertical">
+                            <label for="prix_vente" class="form__label">Prix de Vente:</label>
                             <div>
-                                <input type="text" name="nom" id="nom" class="form__input-field" />
-                                <!-- <span class="form__input-field unit">m<sup>2</sup></span> -->
+                                <input type="number" name="prix_vente" id="prix_vente" class="form__input-field" />
+                                <span class="form__input-field unit">Ar</span>
                             </div>
-                        </div>
-                        <div class="form__input vertical">
-                                <label for="prix_vente" class="form__label">Prix de Vente:</label>
-                                <div>
-                                    <input type="number" name="prix_vente" id="prix_vente" class="form__input-field" />
-                                    <span class="form__input-field unit">Ar</span>
-                                </div>
-                        </div>
                     </div>
                     <div class="form__input vertical">
                         <label for="occupation" class="form__label">Occupation:</label>
@@ -63,13 +61,11 @@
                             <span class="form__input-field unit">m<sup>2</sup></span>
                         </div>
                     </div>
-                    <div class="form__input horizontal">
-                        <div class="form__input vertical">
-                            <label for="rendement" class="form__label">Rendement:</label>
-                            <div>
-                                <input type="number" name="rendement" id="rendement" class="form__input-field" />
-                                <span class="form__input-field unit">Kg/mois</span>
-                            </div>
+                    <div class="form__input vertical">
+                        <label for="rendement" class="form__label">Rendement:</label>
+                        <div>
+                            <input type="number" name="rendement" id="rendement" class="form__input-field" />
+                            <span class="form__input-field unit">Kg/mois</span>
                         </div>
                     </div>
                     <div class="form__input horizontal">

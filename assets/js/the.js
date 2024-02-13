@@ -2,15 +2,20 @@ const edit = (info, index) => {
     let inputField = document.getElementById("nom");
     let occupation = document.getElementById("occupation");
     let rendement = document.getElementById("rendement");
+    let prixVente  = document.getElementById("prix_vente");
 
     let btn = document.getElementById("form__submit-btn");
 
     inputField.textContent = info["nom"];
     inputField.value = info["nom"];
 
+    prixVente.value = info["prix de vente"];
+
     occupation.value = info["occupation"];
 
     rendement.value = info["rendement"];
+
+
 
     btn.value = "Update";
     btn.textContent = "Update";
