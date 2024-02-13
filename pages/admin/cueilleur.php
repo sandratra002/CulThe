@@ -67,20 +67,21 @@
                     </div>
                     <div class="form__input vertical">
                             <label for="birthday" class="form__label">Poids minimal Journalier:</label>
-                            <input type="number" name="poid_minimal" id="birthday" class="form__input-field" value="2023-02-13"/>
+                            <input type="number" name="poid_minimal" id="poid_minimal" class="form__input-field" />
                         </div>
                     <div class="form__input-group horizontal">
                         <div class="form__input vertical">
                             <label for="birthday" class="form__label">Bonus superieur:</label>
-                            <input type="bonus_superieur" name="bonus_superieur" id="birthday" class="form__input-field" value="0"/>
+                            <input type="bonus_superieur" name="bonus_superieur" id="bonus_superieur" class="form__input-field" value="0"/>
                         </div>
                         <div class="form__input vertical">
                             <label for="birthday" class="form__label">Bonus Inferieur : </label>
-                            <input type="bonus_inferieur" name="bonus_inferieur" id="birthday" class="form__input-field" value="0"/>
+                            <input type="bonus_inferieur" name="bonus_inferieur" id="bonus_inferieur" class="form__input-field" value="0"/>
                         </div>
                     </div>
                 </div>
                 <input type="submit" value="Ajouter" class="form__submit btn" id="form__submit-btn" />
+                <button type="submit" class="form__submit btn" id="form__submit-btn">Insert</button>
             </form>
         </section>
     </div>
