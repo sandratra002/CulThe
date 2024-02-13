@@ -15,5 +15,5 @@
     );
 
     echo json_encode($resutlat);
-    //header('Location:../../pages/client/resultat.php');
+    
 ?>

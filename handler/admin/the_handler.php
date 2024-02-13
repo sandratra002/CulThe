@@ -11,12 +11,13 @@
         $nom = $_POST['nom'];
         $occupation = $_POST['occupation'];
         $rendement = $_POST['rendement'];
+        $prixVente = $_POST['prix_vente'];
         for ($i=0; $i < 12; $i++) { 
            if(isset($months[$i])){
                 $selectedMonth[] = $months[$i];
            }
         }
-        insert_variete_the($nom,$occupation,$rendement);
+        insert_variete_the($nom,$occupation,$rendement , $prixVente);
         header("Location: ../../pages/admin/main.php?page=the");
         echo("insertion successful :) ");
     }else if($mode == "u"){
