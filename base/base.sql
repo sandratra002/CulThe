@@ -247,3 +247,11 @@ CREATE OR REPLACE VIEW v_culthe_paiement_cueilleur AS
     ON cic.id_cueilleur=cs.id_cueilleur
     GROUP BY cc.id,cic.date_cueillette
     ;
+
+CREATE OR REPLACE VIEW v_culthe_montant_vente AS 
+    SELECT cp.id,cvt.prix_vente
+    FROM culthe_parcelle 
+    AS cp 
+    JOIN culthe_variete_the 
+    AS cvt 
+    ON cp.id_variete_the=cvt.id;
