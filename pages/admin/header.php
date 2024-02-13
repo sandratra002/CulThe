@@ -10,6 +10,8 @@
                     <li class="nav__item"><a href="main.php?page=cueilleur">Ceuilleurs</a></li>
                     <li class="nav__item"><a href="main.php?page=depense">Depenses</a></li>
                     <li class="nav__item"><a href="main.php?page=salaire">Salaire</a></li>
+                    <li class="nav__item"><a href="../../handler/admin/logOut.php">Log Out <i class="fa fa-sign-out"></i></a></li>
+
                 </ul>
             </nav>
             

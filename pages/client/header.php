@@ -7,6 +7,8 @@
                     <li class="nav__item"><a href="main.php?page=resultat">Home</a></li>
                     <li class="nav__item"><a href="main.php?page=cueillettes">Cueillettes</a></li>
                     <li class="nav__item"><a href="main.php?page=depenses">Depenses</a></li>
+                    <li class="nav__item"><a href="../../handler/client/logOut.php">Log Out <i class="fa fa-sign-out"></i></a></li>
+
                 </ul>
             </nav>
             

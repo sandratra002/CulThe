@@ -25,7 +25,7 @@
         </section>
 
         <section class="right">
-            <form action="" method="post" id="login-form" class="form">
+            <form action="../../handler/client/resultat_handler.php" method="post" id="login-form" class="form">
                 <h1 class="form__title">Check Historique</h1>
 
                 <hr class="form__sep">
@@ -40,7 +40,7 @@
                         <div class="form__input vertical">
                             <label for="date_harvest" class="form__label">Date fin:</label>
 
-                            <input type="date" name="date_fon" id="date_harvest" class="form__input-field" />
+                            <input type="date" name="date_fin" id="date_harvest" class="form__input-field" />
                         </div>
                     </div>
                 </div>
