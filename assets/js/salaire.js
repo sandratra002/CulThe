@@ -1,16 +1,15 @@
 const edit = (info, index) => {
     console.log(info);
-    let inputField = document.getElementById("numero");
-    let occupation = document.getElementById("occupation");
-    let tea = document.getElementById("tea");
+    let inputField = document.getElementById("cueilleur");
+    let occupation = document.getElementById("expense");
 
     let btn = document.getElementById("form__submit-btn");
 
-    inputField.value = info["numero parcelle"];
+    occupation.value = info["salaire"];
 
-    occupation.value = info["surface en ha"];
+    console.log(info);
 
-    setSelectByValue("tea", info["type de plantation"]);
+    setSelectByValue("tea", info.iduser);
 
     btn.value = "Update";
     btn.textContent = "Update";
@@ -18,25 +17,24 @@ const edit = (info, index) => {
     btn.onclick = (e) => {
         e.preventDefault();
         let inputField = document.getElementById("numero");
-        let occupation = document.getElementById("occupation");
+        let occupation = document.getElementById("expense");
         let tea = document.getElementById("tea");
 
         let formData = new FormData();
         formData.append("id", info["id"]);
-        formData.append("numero", inputField.value);
-        formData.append("surface", occupation.value);
-        formData.append("variete", tea.value);
+        formData.append("salaire", occupation.value);
+        formData.append("cueilleur", tea.value);
 
-        let obj = {"numero" : inputField.value, "surface" : occupation.value, "variete" : tea.value};
+        let obj = {"salaire" : occupation.value, "cueilleur" : tea.value};
 
-        let url = `http://localhost/FinalProject/handler/admin/parcelle_handler.php?mode=u`;
+        let url = `http://localhost/FinalProject/handler/admin/salaire_handler.php?mode=u`;
         ajax("POST", url, formData)
             .then((data) => {
                 console.log(data)
                 popup(data, "popup success");
-                updateValue("table", index + 1, "Numero parcelle", obj["numero"]);
-                updateValue("table", index + 1, "Surface en Ha", obj["surface"]);
-                updateValue("table", index + 1, "Type de plantation", getTextContentByValue("tea", obj["variete"]));
+                updateValue("table", index + 1, "Salaire", obj["salaire"]);
+                updateValue("table", index + 1, "Nom", getTextContentByValue("tea", obj["cueilleur"]));
+                updateValue("table", index + 1, "IdUser", obj["cueilleur"]);
                 btn.removeEventListener("click", () => {});
             })
             .catch((error) =>{
@@ -49,7 +47,7 @@ const edit = (info, index) => {
 const remove = (info, index) => {
     let formData = new FormData();
     formData.append("id", info["id"]);
-    let url = `http://localhost/FinalProject/handler/admin/parcelle_handler.php?mode=d`;
+    let url = `http://localhost/FinalProject/handler/admin/salaire_handler.php?mode=d`;
     ajax("POST", url, formData)
         .then((data) => {
             console.log(data)

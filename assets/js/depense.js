@@ -22,6 +22,7 @@ const edit = (info, index) => {
                 console.log(data)
                 popup(data, "popup success");
                 updateValue("table", index + 1, "Libelle", inputField.value);
+                btn.removeEventListener("click", () => {});
             })
             .catch((error) =>{
                 console.log(error);

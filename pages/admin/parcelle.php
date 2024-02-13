@@ -9,14 +9,17 @@
             <hr class="section__sep">
 
             <div class="section__content">
-                <table>
+                <table id= "table">
                     <tr>
+                        <th class="id number">Id</th>
                         <th class="id number">Numero parcelle</th>
                         <th class="surface">Surface en Ha</th>
                         <th class="name">Type de plantation</th>
+                        <th class="name">Action</th>
                     </tr>
                 <?php for($i=0; $i<count($list_parcel); $i++){ ?>
                     <tr>
+                        <td class="id number"><?php echo($list_parcel[$i]['id_parcelle']); ?></td>
                         <td class="id number"><?php echo($list_parcel[$i]['numero_parcelle']); ?></td>
                         <td class="surface"><?php echo($list_parcel[$i]['surface_parcelle']); ?></td>
                         <td class="name"><?php echo($list_parcel[$i]['nom_variete_the']); ?></td>
@@ -55,7 +58,9 @@
                         </select>
                     </div>
                 </div>
-                <input type="submit" value="Inserer" class="form__submit btn" />
+                <input type="submit" value="Inserer" class="form__submit btn" id="form__submit-btn" />
             </form>
         </section>
     </div>
+
+<script src="../../assets/js/parecelle.js"></script>

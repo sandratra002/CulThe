@@ -39,6 +39,7 @@ const edit = (info, index) => {
                 updateValue("table", index + 1, "Nom", obj["nom"]);
                 updateValue("table", index + 1, "Genre", obj["genre"]);
                 updateValue("table", index + 1, "Date de naissance", obj["birthday"]);
+                btn.removeEventListener("click", () => {});
             })
             .catch((error) =>{
                 console.log(error);

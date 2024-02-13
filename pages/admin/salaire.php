@@ -9,17 +9,24 @@
             <hr class="section__sep">
 
             <div class="section__content">
-                <table>
+                <table id="table">
                     <tr>
-                        <th class="id number">ID </th>
+                        <th class="id number">ID</th>
+                        <th class="id number">IdUser</th>
                         <th class="id number">Nom</th>
                         <th class="name number">Salaire</th>
+                        <th class="name">Action</th>
                     </tr>
                     <?php for($i=0; $i<count($list_salaire); $i++){ ?>
                     <tr>
-                        <td class="id number"><?php echo $list_salaire[$i]['id_cueilleur']; ?></td>
+                        <td class="id number"><?php echo $list_salaire[$i]['id_salaire']; ?></td>
+                        <td class="name"><?php echo $list_salaire[$i]['id_cueilleur']; ?></td>
                         <td class="name"><?php echo $list_salaire[$i]['nom_cueilleur']; ?></td>
                         <td class="name number"><?php echo $list_salaire[$i]['montant']; ?></td>
+                        <td>
+                            <a href="#" class="edit-btn"><i class="fa fa-edit"></i></a>
+                            <a href="#" class="delete-btn"><i class="fa fa-trash"></i></a>
+                        </td>
                     </tr>
                 <?php } ?>
                 </table>
@@ -32,7 +39,7 @@
                 <hr class="form__sep">
                 <div class="form__content">
                     <div class="form__input vertical">
-                        <label for="field" class="form__label">Cueilleur : </label>
+                        <label for="tea" class="form__label">Cueilleur : </label>
                         <select name="cueilleur" id="tea" class="form__input-field">
                             <?php for($i=0; $i<count($list_cueilleur); $i++){ ?>
                                 <option value="<?php echo $list_cueilleur[$i]['id_cueilleur']; ?>"><?php echo $list_cueilleur[$i]['nom_cueilleur']; ?></option>
@@ -45,7 +52,8 @@
                     </div>
                 </div>
 
-                <input type="submit" value="Inserer" class="form__submit btn" />
+                <input type="submit" value="Inserer" class="form__submit btn" id="form__submit-btn"/>
             </form>
         </section>
     </div>
+<script src="../../assets/js/salaire.js"></script>

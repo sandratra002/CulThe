@@ -106,3 +106,13 @@ const popup = (message, classes) =>{
         container.removeChild(popup)
     }, 3000);
 };
+
+function getTextContentByValue(selectId, value) {
+  const select = document.getElementById(selectId);
+  for (const option of select.options) {
+    if (option.value === value) {
+      return option.textContent;
+    }
+  }
+  return null;
+}
