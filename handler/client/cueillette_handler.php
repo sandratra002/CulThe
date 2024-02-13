@@ -1,6 +1,5 @@
 <?php
     require("../../inc/functions.php");
-    var_dump($_POST);
     $mode = null;
     if(isset($_GET['mode'])){
         $mode = $_GET['mode'];

@@ -31,7 +31,7 @@
     }
 
     function get_rendement_par_parcelle($id){
-        $request = "SELECT rendement_par_mois FROM v_culthe_info_parcelle WHERE id=%s";
+        $request = "SELECT rendement_par_mois FROM v_culthe_info_parcelle WHERE id_parcelle=%s";
         $request = sprintf($request, $id);
         $temp = mysqli_query(dbconnect(),$request);
         $result = null;
@@ -42,5 +42,30 @@
         }
         mysqli_free_result($temp);
         return $result;
+    }
+
+    function get_surface_par_parcelle($id){
+        $request = "SELECT surface_parcelle FROM v_culthe_info_parcelle WHERE id_parcelle=%s";
+        $request = sprintf($request, $id);
+        $temp = mysqli_query(dbconnect(),$request);
+        $result = null;
+        if(mysqli_num_rows($temp) == 0){
+            return null;
+        }else{
+            $result = mysqli_fetch_array($temp);
+        }
+        mysqli_free_result($temp);
+        return $result;
+    }
+
+    function regenerate_parcelle_by_id($id){
+        $request1 = "SELECT id_variete_the FROM culthe_parcelle WHERE id=".$id;
+        $id_variete = mysqli_query(dbconnect(),$request1);
+        $id_variete_the = mysqli_fetch_assoc($id);
+        $occupation = get_occupation_variete_the_by_id($id_variete_the['id_variete_the']);
+        $surface = get_surface_par_parcelle($id);
+        $nombre_pieds = round(($surface['surface_parcelle'] * 1000)/$occupation);
+        $request2 = "UPDATE culthe_parcelle SET nombre_pieds=".$nombre_pieds." WHERE id=".$id;
+        mysqli_query(dbconnect(),$request2);
     }
 ?>
