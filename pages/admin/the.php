@@ -1,5 +1,6 @@
 <?php 
     $list_variete_the = get_all_variete_the();
+    $months = array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
 ?>
 <div class="body double-col">
         <section class="left">
@@ -58,6 +59,21 @@
                             <input type="number" name="rendement" id="rendement" class="form__input-field" />
                             <span class="form__input-field unit">Kg/mois</span>
                         </div>
+                    </div>
+
+                    <div class="form__input horizontal">
+                        <?php for($i = 0; $i < 6; $i++){ ?>
+                            <input type="checkbox" name="<?php echo strtolower($months[$i]); ?>" id="<?php echo strtolower($months[$i]); ?>" class="form__input-field" />
+                            <label for="<?php echo strtolower($months[$i]); ?>" class="form__label"><?php echo $months[$i] ?></label>
+                        <?php } ?>
+                    </div>
+                    <div class="form__input horizontal">
+                        <?php for($i = 6; $i < 12; $i++){ ?>
+                        <!-- <div class="form__input"> -->
+                            <input type="checkbox" name="<?php echo strtolower($months[$i]); ?>" id="<?php echo strtolower($months[$i]); ?>" class="form__input-field" />
+                            <label for="<?php echo strtolower($months[$i]); ?>" class="form__label"><?php echo $months[$i]; ?></label>
+                        <!-- </div> -->
+                        <?php } ?>
                     </div>
                 </div>
                 <button type="submit" class="form__submit btn" id="form__submit-btn">Submit</button>

@@ -1,3 +1,15 @@
+function removeTableBodyRows(tableId) {
+  const table = document.getElementById(tableId);
+  if (table && table.tBodies.length > 0) {
+    const tbody = table.tBodies[0];
+    while (tbody.firstChild) {
+      tbody.removeChild(tbody.firstChild); // Remove each row
+    }
+  } else {
+    console.error(`Table with ID "${tableId}" not found or has no tbody elements.`);
+  }
+}
+
 const getTableValues = () =>{
     const table = document.getElementById('table');
     const headers = Array.from(table.querySelectorAll('th')).map(th => th.textContent.toLowerCase());

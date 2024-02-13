@@ -33,8 +33,9 @@
     display: flex;
     align-items: center;
     gap: .5rem;
+    flex-wrap: wrap;
 
-    width: 100%;
+    max-width: 100%;
 }
 
 .form__input-group.horizontal {
