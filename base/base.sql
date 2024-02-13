@@ -7,9 +7,6 @@ CREATE TABLE culthe_type_user(
     UNIQUE(libelle)
 )Engine=InnoDb;
 
-INSERT INTO culthe_type_user VALUE 
-    (NULL,'admin'),
-    (NULL,'client');
 
 CREATE TABLE culthe_user(
     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -20,10 +17,6 @@ CREATE TABLE culthe_user(
     FOREIGN KEY(id_type) REFERENCES culthe_type_user(id)
 )Engine=InnoDb;
 
-INSERT INTO culthe_user VALUE 
-    (NULL,'admin',sha1('admin'),1),
-    (NULL,'client',sha1('client'),2)
-;
 
 CREATE TABLE culthe_variete_the(
     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -32,22 +25,6 @@ CREATE TABLE culthe_variete_the(
     rendement DECIMAL(10,2) NOT NULL,
     CHECK(occupation > 0 AND rendement > 0)
 )Engine=InnoDb;
-
-INSERT INTO culthe_variete_the VALUES
-    (NULL,'Thé vert Sencha', 5.25, 8.75),
-    (NULL,'Thé noir Assam', 5.25, 7.90),
-    (NULL,'Thé oolong Tie Guan Yin', 5.25, 9.20),
-    (NULL,'Thé blanc Bai Hao Yin Zhen', 5.25, 10.50),
-    (NULL,'Thé pu-erh Sheng', 5.25, 10.00),
-    (NULL,'Thé vert Matcha', 5.25, 8.50),
-    (NULL,'Thé noir Darjeeling', 5.25, 9.80),
-    (NULL,'Thé oolong Da Hong Pao', 5.25, 9.40),
-    (NULL,'Thé blanc Shou Mei', 5.25, 10.80),
-    (NULL,'Thé pu-erh Shou', 5.25, 10.20);
-
-INSERT INTO culthe_variete_the VALUES 
-    (NULL,'Thé pu-erh Shou', 5.25, 10.20,20000)
-    ;
 
 CREATE TABLE culthe_parcelle(
     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -60,29 +37,11 @@ CREATE TABLE culthe_parcelle(
     FOREIGN KEY(id_variete_the) REFERENCES culthe_variete_the(id)
 )Engine=InnoDb;
 
-INSERT INTO culthe_parcelle VALUES
-    (NULL,1, 2,3809, 1),
-    (NULL,2, 3,5714, 3),
-    (NULL,3, 2,3809, 5),
-    (NULL,4, 1,1904, 7),
-    (NULL,5, 2,3809, 9),
-    (NULL,6, 2,3809, 2),
-    (NULL,7, 5,9523, 4),
-    (NULL,8, 5,9523, 6),
-    (NULL,9, 3,5714, 8),
-    (NULL,10, 2,3809, 10);
-
 
 CREATE TABLE culthe_genre(
     id INT PRIMARY KEY AUTO_INCREMENT, 
     libelle VARCHAR(10) NOT NULL
 )Engine=InnoDb;
-
-INSERT INTO culthe_genre VALUE 
-    (null,'Homme'),
-    (null,'Femme'),
-    (null,'N/A')
-;
 
 CREATE TABLE culthe_cueilleur(
     id INT PRIMARY KEY AUTO_INCREMENT, 
@@ -93,31 +52,11 @@ CREATE TABLE culthe_cueilleur(
     FOREIGN KEY(id_genre) REFERENCES culthe_genre(id)
 )Engine=InnoDb;
 
-INSERT INTO culthe_cueilleur VALUES
-    (NULL,'Marie Dupont', 2, '1990-05-15'),
-    (NULL,'Jean Leclerc', 1, '1985-08-23'),
-    (NULL,'Sophie Martin', 2, '1992-02-10'),
-    (NULL,'Pierre Lambert', 1, '1988-11-03'),
-    (NULL,'Isabelle Girard', 2, '1995-07-18'),
-    (NULL,'Luc Moreau', 1, '1983-04-26'),
-    (NULL,'Claire Lefevre', 2, '1998-09-12'),
-    (NULL,'David Tremblay', 1, '1980-12-30'),
-    (NULL,'Aurélie Roy', 2, '1993-06-08'),
-    (NULL,'Alexandre Gagnon', 1, '1987-01-17');
-
 
 CREATE TABLE culthe_categorie_depense(
     id INT PRIMARY KEY AUTO_INCREMENT, 
     libelle VARCHAR(50) NOT NULL
 )Engine=InnoDb;
-
-INSERT INTO culthe_categorie_depense VALUE
-    (NULL,'Transport'),
-    (NULL,'Carburant'),
-    (NULL,'Logistique'),
-    (NULL,'Engrais'),
-    (NULL,'Pourboire')
-;
 
 CREATE TABLE culthe_depense(
     id INT PRIMARY KEY AUTO_INCREMENT, 
@@ -136,9 +75,6 @@ CREATE TABLE culthe_cueillette(
     FOREIGN KEY(id_cueilleur) REFERENCES culthe_cueilleur(id),
     FOREIGN KEY(id_parcelle) REFERENCES culthe_parcelle(id)
 )Engine=InnoDb;
-
-INSERT INTO culthe_cueillette VALUES 
-    (NULL,1,1,'2023-2-1',245);
 
 CREATE TABLE culthe_salaire(
     id INT PRIMARY KEY AUTO_INCREMENT, 
@@ -269,5 +205,67 @@ CREATE OR REPLACE VIEW v_culthe_montant_vente AS
     GROUP BY c.numero_parcelle,i.date_cueillette,c.restant,i.somme,p.montant,v.prix_vente
     ;
     
-    
-    v_culthe_info_depense,v_culthe_info_cueillette_prix;
+    INSERT INTO culthe_type_user VALUE 
+    (NULL,'admin'),
+    (NULL,'client');
+INSERT INTO culthe_user VALUE 
+    (NULL,'admin',sha1('admin'),1),
+    (NULL,'client',sha1('client'),2)
+;
+INSERT INTO culthe_variete_the VALUES
+    (NULL,'Thé vert Sencha', 5.25, 8.75),
+    (NULL,'Thé noir Assam', 5.25, 7.90),
+    (NULL,'Thé oolong Tie Guan Yin', 5.25, 9.20),
+    (NULL,'Thé blanc Bai Hao Yin Zhen', 5.25, 10.50),
+    (NULL,'Thé pu-erh Sheng', 5.25, 10.00),
+    (NULL,'Thé vert Matcha', 5.25, 8.50),
+    (NULL,'Thé noir Darjeeling', 5.25, 9.80),
+    (NULL,'Thé oolong Da Hong Pao', 5.25, 9.40),
+    (NULL,'Thé blanc Shou Mei', 5.25, 10.80),
+    (NULL,'Thé pu-erh Shou', 5.25, 10.20);
+
+INSERT INTO culthe_variete_the VALUES 
+    (NULL,'Thé pu-erh Shou', 5.25, 10.20,20000)
+    ;
+
+INSERT INTO culthe_parcelle VALUES
+    (NULL,1, 2,3809, 1),
+    (NULL,2, 3,5714, 3),
+    (NULL,3, 2,3809, 5),
+    (NULL,4, 1,1904, 7),
+    (NULL,5, 2,3809, 9),
+    (NULL,6, 2,3809, 2),
+    (NULL,7, 5,9523, 4),
+    (NULL,8, 5,9523, 6),
+    (NULL,9, 3,5714, 8),
+    (NULL,10, 2,3809, 10);
+
+
+INSERT INTO culthe_genre VALUE 
+    (null,'Homme'),
+    (null,'Femme'),
+    (null,'N/A')
+;
+
+INSERT INTO culthe_cueilleur VALUES
+    (NULL,'Marie Dupont', 2, '1990-05-15'),
+    (NULL,'Jean Leclerc', 1, '1985-08-23'),
+    (NULL,'Sophie Martin', 2, '1992-02-10'),
+    (NULL,'Pierre Lambert', 1, '1988-11-03'),
+    (NULL,'Isabelle Girard', 2, '1995-07-18'),
+    (NULL,'Luc Moreau', 1, '1983-04-26'),
+    (NULL,'Claire Lefevre', 2, '1998-09-12'),
+    (NULL,'David Tremblay', 1, '1980-12-30'),
+    (NULL,'Aurélie Roy', 2, '1993-06-08'),
+    (NULL,'Alexandre Gagnon', 1, '1987-01-17');
+
+INSERT INTO culthe_categorie_depense VALUE
+    (NULL,'Transport'),
+    (NULL,'Carburant'),
+    (NULL,'Logistique'),
+    (NULL,'Engrais'),
+    (NULL,'Pourboire')
+;
+INSERT INTO culthe_cueillette VALUES 
+    (NULL,1,1,'2023-2-1',245);
+

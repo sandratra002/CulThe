@@ -8,7 +8,7 @@
     if(isset($_POST['parcelle']) && isset($_POST['cueilleur']) && isset($_POST['date_cueillette']) && isset($_POST['poids']) && $mode == null){
         $parcel = $_POST['parcelle'];
         $cueilleur = $_POST['cueilleur'];
-        $date_cueillete = $_POST['date_cueillete'];
+        $date_cueillete = $_POST['date_cueillette'];
         $poids = $_POST['poids'];
         try {
             insert_cueillette($cueilleur,$parcel,$date_cueillete,$poids);

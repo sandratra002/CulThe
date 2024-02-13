@@ -28,7 +28,7 @@ const getFormData = () => {
 
   let formData = new FormData();
   formData.append("cueilleur", cueilleur.value);
-  formData.append("data_cueillette", data_cueillette.value);
+  formData.append("date_cueillette", data_cueillette.value);
   formData.append("parcelle", parcelle.value);
   formData.append("poids", poids.value);
 

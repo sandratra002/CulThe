@@ -29,16 +29,18 @@
         $request = "INSERT INTO culthe_cueillette VALUES(NULL,%s,%s,'%s',%s)";
         $p = get_rendement_par_parcelle($id_parcelle);
         $piedRestant = get_restant_parcelle_by_id($id_parcelle);
-        $poids = $piedRestant * $p['rendement_par_mois'];
+        if($p == null || $piedRestant == null)
+            throw new Exception("Some null value");
+        $poids = $piedRestant['restant'] * $p['rendement_par_mois'];
         if($poids > $poids_cueilli){
             mysqli_rollback(dbconnect());
             throw new Exception("Error while checking", 1);
         }
         $request = sprintf($request,$id_cueilleur,$id_parcelle,$date_cueillette,$poids);
-        mysqli_query(dbconnect(),$request);
+        mysqli_query(dbconnect(), $request);
         $request1 = "UPDATE culthe_parcelle SET nombre_pieds=nombre_pieds-%s";
-        $request1 = sprintf($request1,$poids_cueilli);
-        mysqli_query(dbconnect(),$request1);
+        $request1 = sprintf($request1, $poids_cueilli);
+        mysqli_query(dbconnect(), $request1);
     }
 
     function get_all_cueillette(){
