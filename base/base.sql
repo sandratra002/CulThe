@@ -183,3 +183,25 @@ CREATE OR REPLACE VIEW v_culthe_info_depense AS
     JOIN culthe_categorie_depense 
     AS ccd 
     ON cd.id_categorie_depense=ccd.id;
+
+CREATE OR REPLACE VIEW v_culthe_info_depense AS 
+    SELECT cd.*,ccd.libelle AS categorie_depense 
+    FROM culthe_depense 
+    AS cd 
+    JOIN culthe_categorie_depense 
+    AS ccd 
+    ON cd.id_categorie_depense=ccd.id;
+
+CREATE OR REPLACE VIEW v_culthe_somme_poids_cueilli_par_mois AS 
+    SELECT culthe_cueillette.id_parcelle AS id_parcelle_cueillette,YEAR(date_cueillette) AS year,MONTH(date_cueillette) AS month,sum(poids_cueilli) 
+    AS somme 
+    FROM culthe_cueillette 
+    GROUP BY culthe_cueillette.id_parcelle,YEAR(date_cueillette),MONTH(date_cueillette);
+
+CREATE OR REPLACE VIEW v_culthe_parcelle_restant AS 
+    SELECT vip.id_parcelle AS id_parcelle, vip.numero_parcelle AS numero_parcell, vcs.year AS year,vcs.month AS month,vcs.somme AS somme,vip.rendement_par_mois-vcs.somme AS restant
+    FROM v_culthe_info_parcelle
+    AS vip
+    JOIN v_culthe_somme_poids_cueilli_par_mois 
+    AS vcs 
+    ON vip.id_parcelle = vcs.id_parcelle_cueillette;
