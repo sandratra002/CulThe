@@ -3,6 +3,10 @@ const edit = (info, index) => {
     let genreField = document.getElementById("tea");
     let birthDateField = document.getElementById("birthday");
 
+    let poidMinimal = document.getElementById("poid_minimal");
+    let bonusSuperieur = document.getElementById("bonus_superieur");
+    let bonusInferieur = document.getElementById("bonus_inferieur");
+
     let btn = document.getElementById("form__submit-btn");
 
     inputField.textContent = info["nom"];
@@ -11,6 +15,10 @@ const edit = (info, index) => {
     birthDateField.value = info["date de naissance"];
 
     setSelectByValue("tea", info["genre"]);
+
+    poidMinimal.value = info["poids minimal"];
+    bonusInferieur.value = info["mallus"];
+    bonusSuperieur.value = info["bonus"];
 
     btn.value = "Update";
     btn.textContent = "Update";
