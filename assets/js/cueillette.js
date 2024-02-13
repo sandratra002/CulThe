@@ -10,9 +10,11 @@ window.onload = () => {
     let formData = getFormData();
     ajax(method, url, formData)
       .then((data) => {
+        console.log(data);
         popup(data, "popup success");
       })
       .catch((error) => {
+        console.log(error);
         popup(error, "popup error");
       });
   };
@@ -20,7 +22,7 @@ window.onload = () => {
 
 const getFormData = () => {
   let cueilleur = document.getElementById("cueilleur");
-  let data_cueillette = document.getElementById("data_cueillette");
+  let data_cueillette = document.getElementById("date_cueillette");
   let parcelle = document.getElementById("parcelle");
   let poids = document.getElementById("poids");
 

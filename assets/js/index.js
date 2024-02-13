@@ -85,7 +85,7 @@ const ajax = (method, link, formData) =>{
         xhr.onreadystatechange = () =>{
             if(xhr.readyState == 4){
                 if(xhr.status == 200){
-                    if(xhr.responseText.indexOf("success") != 0){
+                    if(xhr.responseText.indexOf("success") >= 0){
                         resolve(xhr.responseText);
                     }else{
                         reject(xhr.responseText);
@@ -97,10 +97,6 @@ const ajax = (method, link, formData) =>{
 
             }
         }
-
-        xhr.onload = () => {
-
-        };
 
         xhr.open(method, link);
         xhr.send(formData);

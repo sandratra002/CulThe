@@ -2,9 +2,6 @@
     require("../../inc/functions.php");
     session_start();
     $mode = null;
-    if(!isset($_SESSION['user']) || $_SESSION['user']['id_type'] != 1){
-        header("Location: ../../pages/admin/index.php");
-    }
     if(isset($_GET['mode'])){
         $mode = $_GET['mode'];
     }

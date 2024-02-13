@@ -42,12 +42,12 @@
                         <div class="form__input vertical">
                             <label for="date_debut" class="form__label">Date debut:</label>
 
-                            <input type="date" name="date_debut" id="date_debut" class="form__input-field" />
+                            <input value="2023-01-01" type="date" name="date_debut" id="date_debut" class="form__input-field" />
                         </div>
                         <div class="form__input vertical">
                             <label for="date_fin" class="form__label">Date fin:</label>
 
-                            <input type="date" name="date_fin" id="date_fin" class="form__input-field" />
+                            <input value="2023-01-01" type="date" name="date_fin" id="date_fin" class="form__input-field" />
                         </div>
                     </div>
                 </div>
