@@ -80,7 +80,6 @@
                         </div>
                     </div>
                 </div>
-                <input type="submit" value="Ajouter" class="form__submit btn" id="form__submit-btn" />
                 <button type="submit" class="form__submit btn" id="form__submit-btn">Insert</button>
             </form>
         </section>

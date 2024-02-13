@@ -30,16 +30,18 @@ const createTableData = (data) => {
     let tBody = document.createElement("tbody");
     table.appendChild(tBody);
     let jsonData = JSON.parse(data);
-    for(const data of jsonData){
-        let tr = document.createElement("tr");
-        tr.innerHTML = `
-            <tr>${data}</tr>
-            <tr>${data}</tr>
-            <tr>${data}</tr>
-            <tr>${data}</tr>
-            <tr>${data}</tr>
-            <tr>${data}</tr>
-        `;
-        tBody.appendChild(tr);
+    if(jsonData.length > 0){
+        for(const data of jsonData){
+            let tr = document.createElement("tr");
+            tr.innerHTML = `
+                <tr>${data}</tr>
+                <tr>${data}</tr>
+                <tr>${data}</tr>
+                <tr>${data}</tr>
+                <tr>${data}</tr>
+                <tr>${data}</tr>
+            `;
+            tBody.appendChild(tr);
+        }
     }
 };
