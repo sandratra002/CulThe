@@ -27,4 +27,8 @@
         $request = sprintf($request,$numero,$surface,$id_variete_the,$id);
         mysqli_query(dbconnect(),$request);
     }
+
+    function regenerate_all_parcelle(){
+        $request = ""
+    }
 ?>

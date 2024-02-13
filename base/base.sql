@@ -49,9 +49,10 @@ CREATE TABLE culthe_parcelle(
     id INT PRIMARY KEY AUTO_INCREMENT,
     numero INT NOT NULL, 
     surface DECIMAL(12,2) NOT NULL,
+    nombre_pieds INT NOT NULL,
     id_variete_the INT NOT NULL,
     UNIQUE(numero,id_variete_the),
-    CHECK(numero > 0),
+    CHECK(numero > 0 AND nombre_pieds >= 0),
     FOREIGN KEY(id_variete_the) REFERENCES culthe_variete_the(id)
 )Engine=InnoDb;
 
