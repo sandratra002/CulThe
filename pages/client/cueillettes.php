@@ -31,7 +31,7 @@
         </section>
 
         <section class="right">
-            <form action="../../handler/client/cueillette_handler.php" method="post" id="login-form" class="form">
+            <form action="" method="post" id="form" class="form">
                 <h1 class="form__title">Ajout de cueillette</h1>
 
                 <hr class="form__sep">
@@ -74,7 +74,7 @@
                     </div>
                 </div>
 
-                <input type="submit" value="Inserer" class="form__submit btn" />
+                <input type="submit" value="Inserer" class="form__submit btn" id="form__submit btn" />
             </form>
         </section>
     </div>
