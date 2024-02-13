@@ -4,7 +4,9 @@ window.onload = () => {
 
   let btn = document.getElementById("form__submit btn");
 
-  btn.onclick = () => {
+  btn.onclick = (e) => {
+    e.preventDefault();
+
     let formData = getFormData();
     ajax(method, url, formData)
       .then((data) => {

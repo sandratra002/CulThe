@@ -33,12 +33,12 @@ const createTableData = (data) => {
     for(const data of jsonData){
         let tr = document.createElement("tr");
         tr.innerHTML = `
-            <tr>${data}</tr>
-            <tr>${data}</tr>
-            <tr>${data}</tr>
-            <tr>${data}</tr>
-            <tr>${data}</tr>
-            <tr>${data}</tr>
+            <tr>${data['date']}</tr>
+            <tr>${data["nom"]}</tr>
+            <tr>${data["malus"]}</tr>
+            <tr>${data["bonus"]}</tr>
+            <tr>${data["poid_minimal"]}</tr>
+            <tr>${data["montant"]}</tr>
         `;
         tBody.appendChild(tr);
     }
