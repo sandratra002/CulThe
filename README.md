@@ -1,2 +1,3 @@
 # FinalProject
- Une application qui gerela production et cueiellette de the
+
+ Une application qui gere la production et la cueillette de the
