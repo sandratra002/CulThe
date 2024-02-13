@@ -42,7 +42,7 @@
     }
 
     function get_all_depense(){
-        $request = "SELECT * FROM culthe_depense";
+        $request = "SELECT * FROM v_culthe_info_depense";
         $temp = mysqli_query(dbconnect(),$request);
         $result = array();
         while($donne = mysqli_fetch_array($temp)){

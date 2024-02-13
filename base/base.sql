@@ -183,4 +183,3 @@ CREATE OR REPLACE VIEW v_culthe_info_depense AS
     JOIN culthe_categorie_depense 
     AS ccd 
     ON cd.id_categorie_depense=ccd.id;
-
