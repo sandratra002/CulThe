@@ -53,13 +53,13 @@
         mysqli_query(dbconnect(),$request);
     }
 
-    function get_montant_vente($id_parcelle){
-        $request = "SELECT * FROM v_culthe_montant_vente WHERE id=".$id_parcelle;
-        $temp = mysqli_query(dbconnect(),$request);
-        $result = mysqli_fetch_array($temp);
-        mysqli_free_result($temp);
-        return $result;
-    }
+    // function get_montant_vente($id_parcelle){
+    //     $request = "SELECT * FROM v_culthe_montant_vente WHERE id=".$id_parcelle;
+    //     $temp = mysqli_query(dbconnect(),$request);
+    //     $result = mysqli_fetch_array($temp);
+    //     mysqli_free_result($temp);
+    //     return $result;
+    // }
     
     function get_rendement_par_parcelle($id){
         $request = "SELECT rendement_par_mois FROM v_culthe_info_parcelle WHERE id_parcelle=%s";
