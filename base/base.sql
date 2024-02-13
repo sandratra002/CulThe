@@ -148,7 +148,7 @@ INSERT INTO culthe_salaire VALUES
 ALTER TABLE culthe_cueilleur ADD  poids_minimal DECIMAL(10,2) NOT NULL; 
 ALTER TABLE culthe_cueilleur ADD  bonus DECIMAL(10,2) NOT NULL; 
 ALTER TABLE culthe_cueilleur ADD  malus DECIMAL(10,2) NOT NULL; 
-ALTER TABLE culthe_cueilleur ADD CONSTRAINT CHECK(poids_minimal >=0 AND bonus > 0 AND malus > 0);
+ALTER TABLE culthe_cueilleur ADD CONSTRAINT CHECK(poids_minimal >=0 AND bonus >= 0 AND malus >= 0);
 
 ALTER TABLE culthe_variete_the ADD prix_vente DECIMAL(18,2) NOT NULL DEFAULT 0;
 ALTER TABLE culthe_variete_the ADD CONSTRAINT CHECK(prix_vente >= 0);

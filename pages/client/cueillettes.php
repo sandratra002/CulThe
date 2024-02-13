@@ -43,7 +43,7 @@
 
                         <select name="cueilleur" id="cueilleur" class="form__input-field">
                             <?php foreach( $cueilleurs as &$value ) { ?>     
-                                <option value="<?php echo $value['id_cueilleur']; ?>"><?php echo $value['nom_cueilleur']; ?></option>
+                                <option value="<?php echo $value['id']; ?>"><?php echo $value['nom']; ?></option>
                             <?php } ?>
                         </select>
                     </div>          
