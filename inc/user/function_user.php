@@ -26,7 +26,8 @@
 
     function insert_cueillette($id_cueilleur,$id_parcelle,$date_cueillette,$poids_cueilli){
         $request = "INSERT INTO culthe_cueillette VALUES(NULL,%s,%s,'%s',%s)";
-        $request = sprintf($request,$id_cueilleur,$id_parcelle,$date_cueillette,$poids_cueilli);
+        $poids = $poids_cueilli * get_rendement_par_parcelle($id_parcelle);
+        $request = sprintf($request,$id_cueilleur,$id_parcelle,$date_cueillette,$poids);
         mysqli_query(dbconnect(),$request);
         $request1 = "UPDATE culthe_parcelle SET nombre_pieds=nombre_pieds-%s";
         $request1 = sprintf($request1,$poids_cueilli);

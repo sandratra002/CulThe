@@ -209,3 +209,14 @@ CREATE OR REPLACE VIEW v_culthe_parcelle_restant AS
     JOIN v_culthe_somme_poids_cueilli_par_mois 
     AS vcs 
     ON vip.id_parcelle = vcs.id_parcelle_cueillette;
+
+CREATE OR REPLACE VIEW v_culthe_info_cueillette_par_variete AS 
+    SELECT cc.*,cip.*, cis.montant 
+    FROM culthe_cueillette 
+    AS cc 
+    JOIN v_culthe_info_parcelle 
+    AS cip 
+    ON cc.id_parcelle=cip.id_parcelle
+    JOIN v_culthe_info_salaire
+    AS cis 
+    ON cc.id_cueilleur=cis.id_cueilleur;
