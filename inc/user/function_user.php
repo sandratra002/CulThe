@@ -77,14 +77,14 @@
     }
 
     function get_total_cueillete($dateDebut,$dateFin){
-        $request = "SELECT * FROM v_culthe_info_cueillette WHERE date_cueillette >='%s' AND date_cueillete <='%s'";
+        $request = "SELECT * FROM v_culthe_info_cueillette WHERE date_cueillette >='%s' AND date_cueillette <='%s'";
         $request = sprintf($request,$dateDebut,$dateFin);
         $temp = mysqli_query(dbconnect(),$request);
         $result = array();
-        while($donne = mysqli_fectch_array($temp)){
+        while($donne = mysqli_fetch_array($temp)){
             $result[] = $donne;
         }
-        mysli_free_result($temp);
+        mysqli_free_result($temp);
         return $result;
     }
 
@@ -118,7 +118,7 @@
         for($i=0; $i<count($cueillette); $i++){
             $total += $cueillette[$i]['somme'];
         }
-        return $total;s
+        return $total;
     }
 
     function get_prix_revient_par_kilo($date_debut,$date_fin){

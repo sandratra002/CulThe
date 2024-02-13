@@ -1,3 +1,6 @@
+<?php
+    
+?>
 <div class="body double-col">
         <section class="left">
             <h1 class="section__title">Historique des resultats</h1>
@@ -29,7 +32,7 @@
         </section>
 
         <section class="right">
-            <form action="" method="post" id="login-form" class="form">
+            <form action="../../handler/client/resultat_handler.php" method="post" id="login-form" class="form">
                 <h1 class="form__title">Check Historique</h1>
 
                 <hr class="form__sep">
