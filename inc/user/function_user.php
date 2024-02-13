@@ -112,19 +112,6 @@
         return $result;
     }
 
-    function get_prix_revient($date_debut,$date_fin){
-        $revient = 0;
-        $depense = get_all_depense_by_date($date_debut,$date_fin);
-        $prix = get_prix_cueillette($date_debut,$date_fin);
-        for($i=0; $i<count($depense); $i++){
-            $revient += $depense[$i]['montant'];
-        }
-        for($i=0; $i<count($prix); $i++){
-            $revient += $prix[$i]['montant'];
-        }
-        return $revient;
-    }
-
     function get_total_poids_cueilli($date_debut,$date_fin){
         $total = 0;
         $cueillette = get_total_cueillete($date_debut,$date_fin);
@@ -134,5 +121,17 @@
         return $total;s
     }
 
-
+    function get_prix_revient_par_kilo($date_debut,$date_fin){
+        $revient = 0;
+        $depense = get_all_depense_by_date($date_debut,$date_fin);
+        $prix = get_prix_cueillette($date_debut,$date_fin);
+        for($i=0; $i<count($depense); $i++){
+            $revient += $depense[$i]['montant'];
+        }
+        for($i=0; $i<count($prix); $i++){
+            $revient += $prix[$i]['montant'];
+        }
+        $cueilli = get_total_poids_cueilli($date_debut,$date_fin);
+        return round($revient/$cueilli);
+    }
 ?>
