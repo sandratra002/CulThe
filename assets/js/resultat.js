@@ -26,6 +26,8 @@ window.onload = () => {
                         <tr>${data}</tr>
                         <tr>${data}</tr>
                         <tr>${data}</tr>
+                        <tr>${data}</tr>
+                        <tr>${data}</tr>
                     `;
                     tBody.appendChild(tr);
                 }
