@@ -31,8 +31,9 @@
     }
 
     function get_restant_parcelle_by_id($id){
-        $request = "SELECT restant FROM v_culthe_parcelle_restant WHERE id=".$id;
-        $temp = mysqli_query($request);
+        $request = "SELECT restant FROM v_culthe_parcelle_restant WHERE id_parcelle=".$id;
+        echo $request;
+        $temp = mysqli_query(dbconnect(), $request);
         $result = null;
         if(mysqli_num_rows($temp) != 0){
             $result = mysqli_fetch_array($temp);
@@ -64,6 +65,7 @@
     function get_rendement_par_parcelle($id){
         $request = "SELECT rendement_par_mois FROM v_culthe_info_parcelle WHERE id_parcelle=%s";
         $request = sprintf($request, $id);
+        echo $request;  
         $temp = mysqli_query(dbconnect(),$request);
         $result = null;
         if(mysqli_num_rows($temp) == 0){

@@ -1,0 +1,43 @@
+.left{
+    max-height: 80%;
+    overflow-y: scroll;
+}
+
+.rigth{
+    position: sticky;
+}
+
+.info__cards{
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.info__card{
+    /* padding : .5rem; */
+    width: 250px;
+    max-height: 350px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column  ;
+
+    border : 1px solid black;
+}
+
+.info__card img{
+    max-width: 200px;
+    max-height: 150px;
+}
+
+.info__card .info.left{
+    overflow: hidden;
+    text-align: left;
+}
+
+.info__card .info.right {
+    overflow: hidden;
+    text-align: center;
+}
